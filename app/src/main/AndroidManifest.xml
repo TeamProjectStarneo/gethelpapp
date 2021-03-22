@@ -13,7 +13,7 @@
         <activity android:name=".MessageActivity" />
         <activity android:name=".HelperActivity" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginRegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
