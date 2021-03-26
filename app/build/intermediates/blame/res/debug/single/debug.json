@@ -1,0 +1,170 @@
+[
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_message.xml.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\layout\\activity_message.xml"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_app_icon_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xxhdpi\\app_icon_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_app_icon_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xhdpi\\app_icon_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_app_icon_round_round.xml.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-anydpi-v26\\app_icon_round_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_menu.xml.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\layout\\activity_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_app_icon_round_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xxhdpi\\app_icon_round_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_helper.xml.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\layout\\activity_helper.xml"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_planner.xml.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\layout\\activity_planner.xml"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_login_icon.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\drawable\\login_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_app_icon_round_foreground.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xxhdpi\\app_icon_round_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_app_icon_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xxxhdpi\\app_icon_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_app_icon_round_foreground.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xxxhdpi\\app_icon_round_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_app_icon_round_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xxxhdpi\\app_icon_round_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_back_icon.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\drawable\\back_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_app_icon_small.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\drawable\\app_icon_small.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login_or_register.xml.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\layout\\activity_login_or_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_app_icon_round_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xhdpi\\app_icon_round_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_app_icon_round_foreground.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-mdpi\\app_icon_round_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_app_icon.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\drawable\\app_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_app_icon_round_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-mdpi\\app_icon_round_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_app_icon_round_foreground.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-xhdpi\\app_icon_round_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_app_icon_round_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-hdpi\\app_icon_round_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_app_icon_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-mdpi\\app_icon_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_app_icon_round.xml.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-anydpi-v26\\app_icon_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\drawable_register_icon.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\drawable\\register_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_app_icon_round.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-hdpi\\app_icon_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_app_icon_round_foreground.png.flat",
+        "source": "C:\\Users\\Tony\\AndroidStudioProjects\\gethelpapp\\app\\src\\main\\res\\mipmap-hdpi\\app_icon_round_foreground.png"
+    }
+]
