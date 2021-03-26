@@ -28,12 +28,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void changeActivity(View view) {
-        if(view.getId() == R.id.registerButton) {
-            Intent i = new Intent(this, LoginActivity.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(i);
+       // if(view.getId() == R.id.registerButton) {
+       //     Intent i = new Intent(this, LoginActivity.class);
+         //   i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+       //     startActivity(i);
         }
-    }
+   // }
 
     @Override
     public void onClick(View v) {
