@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/skyblue"
+    android:background="@color/white"
     tools:context=".MenuActivity">
 
     <LinearLayout
@@ -16,7 +16,7 @@
             android:id="@+id/profileButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@color/grey"
             android:text="Profile"
             android:textSize="25sp"
             android:onClick="changeActivity"
@@ -28,7 +28,7 @@
             android:id="@+id/getHelpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@color/grey"
             android:text="Get Help"
             android:textSize="25sp"
             android:onClick="changeActivity"
@@ -40,7 +40,7 @@
             android:id="@+id/settingsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@color/grey"
             android:text="Settings"
             android:textSize="25sp"
             android:onClick="changeActivity"
@@ -62,7 +62,7 @@
                 android:layout_height="50dp"
                 android:layout_below="@id/menuHeader"
                 android:layout_weight="0.9"
-                android:background="@color/white"
+                android:background="@color/lightGrey"
                 android:textSize="25sp"
                 android:singleLine="true"
                 android:hint="Search..."
@@ -73,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:drawableRight="@drawable/search_icon"
-            android:background="@color/white"
+            android:background="@color/lightGrey"
             android:text=""
             android:textSize="25sp"
             />
@@ -81,7 +81,7 @@
 
     <LinearLayout
         android:id="@+id/addEmergencyBar"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_width="match_parent"
         android:layout_above="@id/menuFooter"
         android:orientation="horizontal">
@@ -89,25 +89,24 @@
 
         <Button
             android:id="@+id/addButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:background="@color/lightGrey"
             android:text="Add"
             android:textSize="25sp"
             android:onClick="changeActivity"
             android:drawableTop="@drawable/add_icon"
-            android:layout_weight="0.5"
+            android:layout_weight="1"
             />
         <Button
             android:id="@+id/emergencyButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:text="Emergency"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:background="@color/lightGrey"
             android:textSize="25sp"
             android:onClick="changeActivity"
             android:drawableTop="@drawable/emergency_icon"
-            android:layout_weight="0.5"
+            android:layout_weight="1"
             />
     </LinearLayout>
 
@@ -121,11 +120,11 @@
             android:id="@+id/messageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
-            android:text="Message"
+            android:background="@color/grey"
+            android:text="Inbox"
             android:textSize="25sp"
             android:onClick="changeActivity"
-            android:drawableBottom="@drawable/message_icon"
+            android:drawableTop="@drawable/message_icon"
             android:layout_weight="0.3"
             />
 
@@ -133,11 +132,11 @@
             android:id="@+id/menuButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@color/grey"
             android:clickable="false"
             android:text="Menu"
             android:textSize="25sp"
-            android:drawableBottom="@drawable/menu_icon"
+            android:drawableTop="@drawable/menu_icon"
             android:layout_weight="0.3"
             />
 
@@ -145,11 +144,11 @@
             android:id="@+id/plannerButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/orange"
+            android:background="@color/grey"
             android:text="Planner"
             android:textSize="25sp"
             android:onClick="changeActivity"
-            android:drawableBottom="@drawable/reminder_icon"
+            android:drawableTop="@drawable/reminder_icon"
             android:layout_weight="0.3"
             />
     </LinearLayout>

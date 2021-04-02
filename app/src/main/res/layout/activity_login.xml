@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/skyblue"
+    android:background="@color/white"
     tools:context=".LoginActivity">
 
     <TextView
@@ -15,7 +15,7 @@
         android:textColor="@color/black"
         android:textAlignment="center"
         android:drawableTop="@drawable/app_icon_small"
-        android:background="@color/orange"
+        android:background="@color/grey"
         />
 
     <TextView
@@ -50,7 +50,7 @@
         android:layout_below="@id/emailLabel"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:background="@color/white"
+        android:background="@color/lightGrey"
         android:textSize="25sp"
         android:singleLine="true"
         android:hint="patrickmurphy@email.com"
@@ -76,7 +76,7 @@
         android:layout_below="@id/passwordLabel"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:background="@color/white"
+        android:background="@color/lightGrey"
         android:textSize="25sp"
         android:singleLine="true"
         android:inputType="textPassword"
@@ -91,7 +91,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:background="@color/orange"
+        android:background="@color/grey"
         android:text="Login"
         android:textSize="25sp"
         android:drawableRight="@drawable/login_icon"
@@ -107,7 +107,7 @@
         android:textSize="25sp"
         android:textAlignment="center"
         android:drawableBottom="@drawable/back_icon"
-        android:background="@color/orange"
+        android:background="@color/grey"
         android:onClick="changeActivity"
         />
 
