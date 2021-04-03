@@ -57,6 +57,7 @@
         android:textSize="25sp"
         android:textAlignment="center"
         android:background="@color/grey"
+        android:onClick="changeActivity"
         />
 
 </RelativeLayout>

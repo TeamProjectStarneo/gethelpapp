@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".HelpActivity">
+
+    <LinearLayout
+        android:id="@+id/helpHeader"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="top">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Back"
+            android:textSize="25sp"
+            android:onClick="changeActivity"
+            android:drawableTop="@drawable/back_icon"
+            />
+
+        <TextView
+            android:id="@+id/appHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GET HELP"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:drawableTop="@drawable/app_icon_small"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/blank"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/helpFooter"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/uploadButton"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_button"
+            android:drawableTop="@drawable/upload_icon"
+            />
+
+        <Button
+            android:id="@+id/micButton"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_button"
+            android:drawableTop="@drawable/mic_icon"
+            />
+
+        <EditText
+            android:id="@+id/searchField"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/menuHeader"
+            android:layout_weight="0.9"
+            android:background="@color/lightGrey"
+            android:textSize="25sp"
+            />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:drawableRight="@drawable/send_icon"
+            android:background="@color/lightGrey"
+            android:text=""
+            android:textSize="25sp"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
