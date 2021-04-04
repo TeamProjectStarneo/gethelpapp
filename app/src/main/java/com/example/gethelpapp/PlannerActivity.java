@@ -16,12 +16,14 @@ public class PlannerActivity extends AppCompatActivity {
 
     public void changeActivity(View view) {
         if(view.getId() == R.id.messageButton) {
-            Intent msgI = new Intent(this, MessageActivity.class);
-            startActivity(msgI);
+            Intent i = new Intent(this, MessageActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
         }
         if(view.getId() == R.id.menuButton) {
-            Intent mnI = new Intent(this, MenuActivity.class);
-            startActivity(mnI);
+            Intent i = new Intent(this, MenuActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
         }
     }
 }

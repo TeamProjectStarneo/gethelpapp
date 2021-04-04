@@ -16,17 +16,14 @@ public class MenuActivity extends AppCompatActivity {
 
     public void changeActivity(View view) {
         if(view.getId() == R.id.messageButton) {
-            Intent msgI = new Intent(this, MessageActivity.class);
-            startActivity(msgI);
+            Intent i = new Intent(this, MessageActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
         }
-        /*
-        if(view.getId() == R.id.menuButton) {
-            Intent mnI = new Intent(this, MenuActivity.class);
-            startActivity(mnI);
-        }*/
         if(view.getId() == R.id.plannerButton) {
-            Intent pI = new Intent(this, PlannerActivity.class);
-            startActivity(pI);
+            Intent i = new Intent(this, PlannerActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
         }
     }
 }

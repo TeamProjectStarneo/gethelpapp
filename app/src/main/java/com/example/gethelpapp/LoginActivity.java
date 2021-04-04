@@ -20,9 +20,7 @@ public class LoginActivity extends AppCompatActivity {
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         } if(view.getId() == R.id.backButton) {
-            Intent i = new Intent(this, LoginRegisterActivity.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(i);
+            finish();
         }
     }
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SuccessActivity">
+
+    <TextView
+        android:id="@+id/appHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GET HELP APP"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:drawableTop="@drawable/app_icon_small"
+        android:background="@color/grey"
+        />
+
+    <TextView
+        android:id="@+id/successMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appHeader"
+        android:layout_marginTop="100dp"
+        android:text="Successfully Created Account"
+        android:textSize="50sp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:drawableBottom="@drawable/smiley_icon"
+        />
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Continue"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:background="@color/grey"
+        android:onClick="changeActivity"
+        android:drawableRight="@drawable/send_icon"
+        />
+
+</RelativeLayout>
