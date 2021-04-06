@@ -104,9 +104,9 @@
             android:layout_height="match_parent"
             android:background="@color/lightGrey"
             android:textSize="25sp"
-            android:onClick="changeActivity"
             android:drawableTop="@drawable/emergency_icon"
             android:layout_weight="1"
+            android:onClick="showEmergency"
             />
     </LinearLayout>
 
