@@ -56,17 +56,17 @@
         />
 
     <TextView
-    android:id="@+id/emailLabel"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/nameField"
-    android:layout_marginTop="25dp"
-    android:layout_marginLeft="50dp"
-    android:layout_marginRight="50dp"
-    android:text="Email:"
-    android:textSize="25sp"
-    android:textColor="@color/black"
-    />
+        android:id="@+id/emailLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameField"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Email:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
 
     <EditText
         android:id="@+id/emailField"

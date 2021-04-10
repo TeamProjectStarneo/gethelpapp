@@ -19,6 +19,10 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void changeActivity(View view) {
+        if(view.getId() == R.id.profileButton) {
+            Intent i = new Intent(this, ProfileActivity.class);
+            startActivity(i);
+        }
         if(view.getId() == R.id.messageButton) {
             Intent i = new Intent(this, MessageActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
