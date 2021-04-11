@@ -1,9 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".HelpActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/helpHeader"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="top">
+
+        <TextView
+            android:id="@+id/blank"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/appHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GET HELP"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:drawableTop="@drawable/app_icon_small"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            android:onClick="changeActivity"
+            />
+
+        <TextView
+            android:id="@+id/blank2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/emailSJOGButton"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/helpHeader"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGrey"
+        android:text="Email SJOG"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:onClick="changeActivity"
+        />
+
+    <Button
+        android:id="@+id/tutorialButton"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/emailSJOGButton"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGrey"
+        android:text="Tutorial PDF"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:onClick="changeActivity"
+        />
+
+    <Button
+        android:id="@+id/videoTutorialButton"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/tutorialButton"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGrey"
+        android:text="Video Tutorial"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:onClick="changeActivity"
+        />
+
+    <Button
+        android:id="@+id/aboutButton"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/videoTutorialButton"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGrey"
+        android:text="About"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:onClick="changeActivity"
+        />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Back"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:drawableBottom="@drawable/back_icon"
+        android:background="@color/grey"
+        android:onClick="changeActivity"
+        />
+
+</RelativeLayout>
