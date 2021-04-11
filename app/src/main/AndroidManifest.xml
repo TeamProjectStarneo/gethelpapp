@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".AccessibilityActivity"></activity>
+        <activity android:name=".NotificationsActivity" />
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".SuccessActivity" />

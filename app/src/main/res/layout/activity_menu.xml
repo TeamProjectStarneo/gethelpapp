@@ -25,7 +25,7 @@
             />
 
         <Button
-            android:id="@+id/getHelpButton"
+            android:id="@+id/appHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/grey"

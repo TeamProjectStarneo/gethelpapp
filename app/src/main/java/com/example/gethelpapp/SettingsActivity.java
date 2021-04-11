@@ -24,6 +24,14 @@ public class SettingsActivity extends AppCompatActivity {
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }
+        if(v.getId() == R.id.notificationsButton) {
+            Intent i = new Intent(this, NotificationsActivity.class);
+            startActivity(i);
+        }
+        if(v.getId() == R.id.accessibilityButton) {
+            Intent i = new Intent(this, AccessibilityActivity.class);
+            startActivity(i);
+        }
         if(v.getId() == R.id.messageButton) {
             Intent i = new Intent(this, MessageActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
