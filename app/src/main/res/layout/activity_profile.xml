@@ -49,8 +49,8 @@
 
     <ImageView
         android:id="@+id/profileImage"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/profileHeader"
         android:layout_marginTop="20dp"
@@ -65,7 +65,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:text="Name:"
+        android:text="Name: Jane Doe"
         android:textSize="25sp"
         android:textColor="@color/black"
         />
@@ -78,7 +78,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:text="Email:"
+        android:text="Email: jane-doe@email.com"
         android:textSize="25sp"
         android:textColor="@color/black"
         />
@@ -91,7 +91,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:text="Address:"
+        android:text="Address: Dublin 10"
         android:textSize="25sp"
         android:textColor="@color/black"
         />
@@ -104,7 +104,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:text="Phone:"
+        android:text="Phone: 0831234567"
         android:textSize="25sp"
         android:textColor="@color/black"
         />

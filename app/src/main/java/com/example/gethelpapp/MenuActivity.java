@@ -1,21 +1,28 @@
 package com.example.gethelpapp;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.app.ListActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuActivity extends ListActivity {
+    // Temporary
+    private String[] helpers = {"Dentist\nAlice Miraci", "Therapist\nKathleen Jones", "Nutritionist\nSally Claiss", "Doctor\nDr Pepper"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        // Temporary
+        setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, helpers));
     }
 
     public void changeActivity(View view) {
@@ -57,5 +64,11 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
         emergencyAlert.create().show();
+    }
+
+    // Temporary
+    protected void onListItemClick(ListView lv, View v, int pos, long id) {
+        Intent i = new Intent(this, HelperActivity.class);
+        startActivity(i);
     }
 }

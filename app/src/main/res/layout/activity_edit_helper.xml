@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".HelperActivity">
+    tools:context=".EditHelperActivity">
 
     <LinearLayout
         android:id="@+id/helperHeader"
@@ -38,15 +38,12 @@
             android:onClick="changeActivity"
             />
 
-        <Button
-            android:id="@+id/editButton"
+        <TextView
+            android:id="@+id/blank"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/grey"
-            android:text="Edit"
-            android:textSize="25sp"
-            android:drawableTop="@drawable/edit_icon"
-            android:onClick="changeActivity"
+            android:layout_weight="1"
             />
     </LinearLayout>
 
@@ -60,6 +57,19 @@
         android:scaleType="fitXY"
         app:srcCompat="@drawable/placeholder_helper" />
 
+    <Button
+        android:id="@+id/changeProfileImage"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/helperImage"
+        android:layout_marginTop="-50dp"
+        android:text="Upload"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:drawableLeft="@drawable/upload_icon"
+        />
+
     <TextView
         android:id="@+id/nameLabel"
         android:layout_width="match_parent"
@@ -68,72 +78,137 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:text="Name: Dr Pepper"
+        android:text="Name:"
         android:textSize="25sp"
         android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/nameField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameLabel"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="Dr Pepper"
         />
 
     <TextView
         android:id="@+id/jobLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/nameLabel"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/nameField"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:text="Job: Doctor"
+        android:text="Job:"
         android:textSize="25sp"
         android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/jobField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jobLabel"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="Doctor"
         />
 
     <TextView
         android:id="@+id/emailLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/jobLabel"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/jobField"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:text="Email: drpepper@email.com"
+        android:text="Email:"
         android:textSize="25sp"
         android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/emailField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailLabel"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="drpepper@email.com"
         />
 
     <TextView
         android:id="@+id/addressLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/emailLabel"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/emailField"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:text="Address: Dublin 3"
+        android:text="Address:"
         android:textSize="25sp"
         android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/addressField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addressLabel"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="Dublin 3"
         />
 
     <TextView
         android:id="@+id/phoneLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/addressLabel"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/addressField"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:text="Phone: 0831234567"
+        android:text="Phone:"
         android:textSize="25sp"
         android:textColor="@color/black"
         />
 
+    <EditText
+        android:id="@+id/phoneField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phoneLabel"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="0831234567"
+        />
+
     <Button
-        android:id="@+id/messageButton"
+        android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Message"
+        android:text="Save"
         android:textSize="25sp"
         android:textAlignment="center"
-        android:drawableBottom="@drawable/message_icon"
+        android:drawableBottom="@drawable/save_icon"
         android:background="@color/grey"
         android:onClick="changeActivity"
         />
