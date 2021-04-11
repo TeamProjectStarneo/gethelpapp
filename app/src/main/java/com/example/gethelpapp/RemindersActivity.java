@@ -16,7 +16,7 @@ public class RemindersActivity extends AppCompatActivity {
 
     public void changeActivity(View view) {
         if(view.getId() == R.id.messageButton) {
-            Intent i = new Intent(this, MessageActivity.class);
+            Intent i = new Intent(this, InboxActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }

@@ -6,14 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 
-public class MessageActivity extends ListActivity {
+public class InboxActivity extends ListActivity {
     // Temporary
     private String[] helpers = {"Dentist: Alice Miraci\nLast Message: Today at 1:00 PM", "Doctor: Dr Pepper\nLast Message: Yesterday at 2:00 AM"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_message);
+        setContentView(R.layout.activity_inbox);
 
         // Temporary
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, helpers));

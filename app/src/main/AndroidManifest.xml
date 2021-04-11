@@ -23,7 +23,7 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RemindersActivity" />
-        <activity android:name=".MessageActivity" />
+        <activity android:name=".InboxActivity" />
         <activity android:name=".HelperActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".LoginRegisterActivity">
