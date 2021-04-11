@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MenuActivity">
+    tools:context=".SettingsActivity">
 
     <LinearLayout
-        android:id="@+id/menuHeader"
+        android:id="@+id/settingsHeader"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:gravity="top">
@@ -31,6 +31,7 @@
             android:background="@color/grey"
             android:text="Get Help"
             android:textSize="25sp"
+            android:onClick="changeActivity"
             android:drawableTop="@drawable/app_icon_small"
             android:layout_weight="0.5"
             />
@@ -42,75 +43,73 @@
             android:background="@color/grey"
             android:text="Settings"
             android:textSize="25sp"
-            android:onClick="changeActivity"
             android:drawableTop="@drawable/settings_icon"
             android:layout_weight="0.25"
             />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/searchBar"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/notificationsButton"
         android:layout_width="match_parent"
-        android:layout_below="@id/menuHeader"
-        android:orientation="horizontal">
+        android:layout_height="75dp"
+        android:layout_below="@id/settingsHeader"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGrey"
+        android:text="Notifications"
+        android:textSize="25sp"
+        android:drawableLeft="@drawable/notification_icon"
+        />
 
-        <EditText
-                android:id="@+id/searchField"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_below="@id/menuHeader"
-                android:layout_weight="0.9"
-                android:background="@color/lightGrey"
-                android:textSize="25sp"
-                android:singleLine="true"
-                android:hint="Search..."
-                />
-
-        <Button
-            android:id="@+id/searchButton"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:drawableRight="@drawable/search_icon"
-            android:background="@color/lightGrey"
-            android:text=""
-            android:textSize="25sp"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/addEmergencyBar"
-        android:layout_height="80dp"
+    <Button
+        android:id="@+id/accessibilityButton"
         android:layout_width="match_parent"
-        android:layout_above="@id/menuFooter"
-        android:orientation="horizontal">
-        >
+        android:layout_height="75dp"
+        android:layout_below="@id/notificationsButton"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGrey"
+        android:text="Accessibility"
+        android:textSize="25sp"
+        android:drawableLeft="@drawable/accessibility_icon"
+        />
 
-        <Button
-            android:id="@+id/addButton"
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:background="@color/lightGrey"
-            android:text="Add"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
-            android:drawableTop="@drawable/add_icon"
-            android:layout_weight="1"
-            />
-        <Button
-            android:id="@+id/emergencyButton"
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:background="@color/lightGrey"
-            android:textSize="25sp"
-            android:drawableTop="@drawable/emergency_icon"
-            android:layout_weight="1"
-            android:onClick="showEmergency"
-            />
-    </LinearLayout>
+    <Button
+        android:id="@+id/soundButton"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/accessibilityButton"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGrey"
+        android:text="Sound"
+        android:textSize="25sp"
+        android:drawableLeft="@drawable/sound_icon"
+        />
+
+    <Button
+        android:id="@+id/themeButton"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/soundButton"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGrey"
+        android:text="Theme"
+        android:textSize="25sp"
+        android:drawableLeft="@drawable/theme_icon"
+        />
+
+    <Button
+        android:id="@+id/helpButton"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/themeButton"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGrey"
+        android:text="Help"
+        android:textSize="25sp"
+        android:drawableLeft="@drawable/help_icon"
+        />
 
     <LinearLayout
-        android:id="@+id/menuFooter"
+        android:id="@+id/settingsFooter"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true">
@@ -135,6 +134,7 @@
             android:clickable="false"
             android:text="Menu"
             android:textSize="25sp"
+            android:onClick="changeActivity"
             android:drawableTop="@drawable/menu_icon"
             android:layout_weight="0.3"
             />
