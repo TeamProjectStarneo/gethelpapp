@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".SoundActivity">
+
+    <LinearLayout
+        android:id="@+id/soundHeader"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="top">
+
+        <TextView
+            android:id="@+id/blank"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/appHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GET HELP"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:drawableTop="@drawable/app_icon_small"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            android:onClick="changeActivity"
+            />
+
+        <TextView
+            android:id="@+id/blank2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/speakBackSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/soundHeader"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGrey"
+        android:text="Speak Back"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:switchMinWidth="75dp"
+        android:checked="true"
+        />
+
+    <Switch
+        android:id="@+id/loudSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/speakBackSwitch"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGrey"
+        android:text="Loud Button"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:switchMinWidth="75dp"
+        android:checked="true"
+        />
+
+    <Switch
+        android:id="@+id/quietSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_below="@id/loudSwitch"
+        android:layout_marginTop="10dp"
+        android:background="@color/lightGrey"
+        android:text="Quiet Button"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:switchMinWidth="75dp"
+        android:checked="false"
+        />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Back"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:drawableBottom="@drawable/back_icon"
+        android:background="@color/grey"
+        android:onClick="changeActivity"
+        />
+
+</RelativeLayout>

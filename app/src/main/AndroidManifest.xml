@@ -9,13 +9,15 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AccessibilityActivity"></activity>
+        <activity android:name=".ThemeActivity"></activity>
+        <activity android:name=".SoundActivity" />
+        <activity android:name=".AccessibilityActivity" />
         <activity android:name=".NotificationsActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".SuccessActivity" />
-        <activity android:name=".HelpActivity" />
+        <activity android:name=".EmailSJOGActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RemindersActivity" />

@@ -22,7 +22,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
             Intent i = new Intent(this, RegisterActivity.class);
             startActivity(i);
         } if(view.getId() ==R.id.helpButton) {
-            Intent i = new Intent(this, HelpActivity.class);
+            Intent i = new Intent(this, EmailSJOGActivity.class);
             startActivity(i);
         }
     }
