@@ -44,7 +44,7 @@ public class RemindersActivity extends ListActivity {
 
     // Temporary
     protected void onListItemClick(ListView lv, View v, int pos, long id) {
-        // Intent i = new Intent(this, ReminderActivity.class);
-        // startActivity(i);
+        Intent i = new Intent(this, ReminderActivity.class);
+        startActivity(i);
     }
 }
