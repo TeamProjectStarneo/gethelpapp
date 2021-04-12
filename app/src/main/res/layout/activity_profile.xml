@@ -15,7 +15,7 @@
 
         <TextView
             android:id="@+id/blank"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="match_parent"
             android:background="@color/grey"
             android:layout_weight="1"
@@ -23,7 +23,7 @@
 
         <Button
             android:id="@+id/appHeader"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:text="GET HELP"
             android:textSize="25sp"
@@ -37,13 +37,14 @@
 
         <Button
             android:id="@+id/editButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:background="@color/grey"
             android:text="Edit"
             android:textSize="25sp"
             android:drawableTop="@drawable/edit_icon"
             android:onClick="changeActivity"
+            android:layout_weight="1"
             />
     </LinearLayout>
 

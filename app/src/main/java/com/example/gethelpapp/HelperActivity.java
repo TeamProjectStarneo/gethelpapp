@@ -22,5 +22,9 @@ public class HelperActivity extends AppCompatActivity {
             Intent i = new Intent(this, EditHelperActivity.class);
             startActivity(i);
         }
+        if(v.getId() == R.id.messageButton) {
+            Intent i = new Intent(this, MessageActivity.class);
+            startActivity(i);
+        }
     }
 }

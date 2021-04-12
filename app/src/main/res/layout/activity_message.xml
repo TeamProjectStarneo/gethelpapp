@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".EmailSJOGActivity">
+    tools:context=".MessageActivity">
 
     <LinearLayout
-        android:id="@+id/emailSJOGHeader"
-        android:layout_height="wrap_content"
+        android:id="@+id/messageHeader"
+        android:layout_height="75dp"
         android:layout_width="match_parent"
         android:gravity="top">
 
         <Button
             android:id="@+id/backButton"
             android:layout_width="0px"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/grey"
             android:text="Back"
             android:textSize="25sp"
@@ -24,30 +25,29 @@
             android:layout_weight="1"
             />
 
-        <TextView
-            android:id="@+id/appHeader"
+        <ImageView
+            android:id="@+id/helperImage"
             android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:text="GET HELP"
-            android:textSize="25sp"
-            android:textColor="@color/black"
-            android:textAlignment="center"
-            android:drawableTop="@drawable/app_icon_small"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
             android:background="@color/grey"
             android:layout_weight="1"
-            />
+            app:srcCompat="@drawable/placeholder_helper" />
 
         <TextView
             android:id="@+id/blank"
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:background="@color/grey"
+            android:text="Doctor:\nDr Pepper"
+            android:textSize="25sp"
+            android:textColor="@color/black"
             android:layout_weight="1"
             />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/emailSJOGFooter"
+        android:id="@+id/messageFooter"
         android:layout_height="50dp"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true">

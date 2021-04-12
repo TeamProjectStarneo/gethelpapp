@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class InboxActivity extends ListActivity {
     // Temporary
@@ -39,5 +40,11 @@ public class InboxActivity extends ListActivity {
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }
+    }
+
+    // Temporary
+    protected void onListItemClick(ListView lv, View v, int pos, long id) {
+        Intent i = new Intent(this, MessageActivity.class);
+        startActivity(i);
     }
 }

@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditHelperActivity"></activity>
+        <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".EditHelperActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".ThemeActivity" />
         <activity android:name=".SoundActivity" />

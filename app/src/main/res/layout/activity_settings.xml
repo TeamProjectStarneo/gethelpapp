@@ -14,37 +14,37 @@
 
         <Button
             android:id="@+id/profileButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:background="@color/grey"
             android:text="Profile"
             android:textSize="25sp"
             android:onClick="changeActivity"
             android:drawableTop="@drawable/placeholder_profile_icon"
-            android:layout_weight="0.25"
+            android:layout_weight="1"
             />
 
         <Button
             android:id="@+id/getHelpButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:background="@color/grey"
             android:text="Get Help"
             android:textSize="25sp"
             android:onClick="changeActivity"
             android:drawableTop="@drawable/app_icon_small"
-            android:layout_weight="0.5"
+            android:layout_weight="1"
             />
 
         <Button
             android:id="@+id/settingsButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:background="@color/grey"
             android:text="Settings"
             android:textSize="25sp"
             android:drawableTop="@drawable/settings_icon"
-            android:layout_weight="0.25"
+            android:layout_weight="1"
             />
     </LinearLayout>
 
@@ -121,19 +121,19 @@
 
         <Button
             android:id="@+id/messageButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:background="@color/grey"
             android:text="Inbox"
             android:textSize="25sp"
             android:onClick="changeActivity"
             android:drawableTop="@drawable/message_icon"
-            android:layout_weight="0.3"
+            android:layout_weight="0.8"
             />
 
         <Button
             android:id="@+id/menuButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:background="@color/grey"
             android:clickable="false"
@@ -141,19 +141,19 @@
             android:textSize="25sp"
             android:onClick="changeActivity"
             android:drawableTop="@drawable/menu_icon"
-            android:layout_weight="0.3"
+            android:layout_weight="1"
             />
 
         <Button
             android:id="@+id/remindersButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0px"
             android:layout_height="wrap_content"
             android:background="@color/grey"
             android:text="Reminders"
             android:textSize="25sp"
             android:onClick="changeActivity"
             android:drawableTop="@drawable/reminder_icon"
-            android:layout_weight="0.3"
+            android:layout_weight="1"
             />
     </LinearLayout>
 
