@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MenuActivity">
+    tools:context=".InboxActivity">
 
     <LinearLayout
-        android:id="@+id/menuHeader"
+        android:id="@+id/messageHeader"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:gravity="top">
@@ -33,6 +33,7 @@
             android:textSize="25sp"
             android:drawableTop="@drawable/app_icon_small"
             android:layout_weight="0.5"
+            android:onClick="changeActivity"
             />
 
         <Button
@@ -52,7 +53,7 @@
         android:id="@+id/searchBar"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_below="@id/menuHeader"
+        android:layout_below="@id/messageHeader"
         android:orientation="horizontal">
 
         <EditText
@@ -78,49 +79,30 @@
             />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/helperRecyclerView"
+    <ListView
+        android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/searchBar"
         android:layout_marginTop="25dp"
         android:layout_marginBottom="175dp"
-        android:visibility="visible"
-        tools:visibility="visible" />
+        android:divider="@color/black"
+        android:dividerHeight="1dp" />
 
-    <LinearLayout
-        android:id="@+id/addEmergencyBar"
-        android:layout_height="80dp"
+    <Button
+        android:id="@+id/editButton"
         android:layout_width="match_parent"
-        android:layout_above="@id/menuFooter"
-        android:orientation="horizontal">
-        >
-
-        <Button
-            android:id="@+id/addButton"
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:background="@color/lightGrey"
-            android:text="Add"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
-            android:drawableTop="@drawable/add_icon"
-            android:layout_weight="1"
-            />
-        <Button
-            android:id="@+id/emergencyButton"
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:background="@color/lightGrey"
-            android:textSize="25sp"
-            android:drawableTop="@drawable/emergency_icon"
-            android:layout_weight="1"
-            android:onClick="showEmergency"
-            />
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_above="@id/messageFooter"
+        android:background="@color/lightGrey"
+        android:text="Edit"
+        android:textSize="25sp"
+        android:drawableTop="@drawable/edit_icon"
+        android:layout_weight="1"
+        />
 
     <LinearLayout
-        android:id="@+id/menuFooter"
+        android:id="@+id/messageFooter"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true">
@@ -135,6 +117,7 @@
             android:onClick="changeActivity"
             android:drawableTop="@drawable/message_icon"
             android:layout_weight="0.3"
+            android:clickable="false"
             />
 
         <Button
@@ -142,11 +125,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/grey"
-            android:clickable="false"
             android:text="Menu"
             android:textSize="25sp"
             android:drawableTop="@drawable/menu_icon"
             android:layout_weight="0.3"
+            android:onClick="changeActivity"
             />
 
         <Button
@@ -156,9 +139,9 @@
             android:background="@color/grey"
             android:text="Reminders"
             android:textSize="25sp"
-            android:onClick="changeActivity"
             android:drawableTop="@drawable/reminder_icon"
             android:layout_weight="0.3"
+            android:onClick="changeActivity"
             />
     </LinearLayout>
 

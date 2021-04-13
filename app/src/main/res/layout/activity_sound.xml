@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".HelpActivity">
+    tools:context=".SoundActivity">
 
     <LinearLayout
-        android:id="@+id/helpHeader"
+        android:id="@+id/soundHeader"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:gravity="top">
@@ -43,56 +43,46 @@
             />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/emailSJOGButton"
+    <Switch
+        android:id="@+id/speakBackSwitch"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_below="@id/helpHeader"
+        android:layout_below="@id/soundHeader"
         android:layout_marginTop="10dp"
         android:background="@color/lightGrey"
-        android:text="Email SJOG"
+        android:text="Speak Back"
         android:textSize="25sp"
         android:textColor="@color/black"
-        android:onClick="changeActivity"
+        android:switchMinWidth="75dp"
+        android:checked="true"
         />
 
-    <Button
-        android:id="@+id/tutorialButton"
+    <Switch
+        android:id="@+id/loudSwitch"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_below="@id/emailSJOGButton"
+        android:layout_below="@id/speakBackSwitch"
         android:layout_marginTop="10dp"
         android:background="@color/lightGrey"
-        android:text="Tutorial PDF"
+        android:text="Loud Button"
         android:textSize="25sp"
         android:textColor="@color/black"
-        android:onClick="changeActivity"
+        android:switchMinWidth="75dp"
+        android:checked="true"
         />
 
-    <Button
-        android:id="@+id/videoTutorialButton"
+    <Switch
+        android:id="@+id/quietSwitch"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_below="@id/tutorialButton"
+        android:layout_below="@id/loudSwitch"
         android:layout_marginTop="10dp"
         android:background="@color/lightGrey"
-        android:text="Video Tutorial"
+        android:text="Quiet Button"
         android:textSize="25sp"
         android:textColor="@color/black"
-        android:onClick="changeActivity"
-        />
-
-    <Button
-        android:id="@+id/aboutButton"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_below="@id/videoTutorialButton"
-        android:layout_marginTop="10dp"
-        android:background="@color/lightGrey"
-        android:text="About"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        android:onClick="changeActivity"
+        android:switchMinWidth="75dp"
+        android:checked="false"
         />
 
     <Button

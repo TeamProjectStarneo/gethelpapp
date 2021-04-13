@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         loginPassword = (EditText) findViewById(R.id.passwordField);
         loginButton = (Button) findViewById(R.id.loginButton);
 
-        dataBase = Room.databaseBuilder(this, UserDataBase.class, "mi-database.db")
+        dataBase = Room.databaseBuilder(this, UserDataBase.class, "atabase.db")
                 .allowMainThreadQueries()
                 .build();
         db = dataBase.getUserDao();
@@ -44,9 +44,12 @@ public class LoginActivity extends AppCompatActivity {
                 String password = loginPassword.getText().toString().trim();
 
                 User user = db.getUser(email, password);
+
                 if (user != null) {
+                    int id = user.getId();
                     Intent i = new Intent(LoginActivity.this, MenuActivity.class);
                     i.putExtra("User", user);
+                    i.putExtra("userId",id);
                     startActivity(i);
                     finish();
                 }else{

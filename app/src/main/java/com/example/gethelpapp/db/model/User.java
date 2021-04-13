@@ -13,12 +13,20 @@ public class User implements Serializable {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     private int id;
-    private String userName;
+    private String name;
     private String password;
     private String email ;
 
-    public User(String userName, String password, String email) {
-        this.userName = userName;
+
+
+    private String address;
+
+
+
+    private String phone;
+
+    public User(String name, String password, String email) {
+        this.name = name;
         this.password = password;
         this.email = email;
     }
@@ -32,12 +40,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -56,11 +64,25 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", userName='" + userName + '\'' +
+                ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 '}';

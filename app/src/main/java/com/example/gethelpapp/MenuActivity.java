@@ -2,31 +2,95 @@ package com.example.gethelpapp;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-public class MenuActivity extends AppCompatActivity {
+import com.example.gethelpapp.db.data.SpecialistDao;
+import com.example.gethelpapp.db.data.UserDataBase;
+import com.example.gethelpapp.db.model.Specialist;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MenuActivity extends AppCompatActivity {
+    static int userid;
+    private RecyclerView helperRecyclerView;
+    private HelperRecyclerAdapter helperRecyclerAdapter;
+    private SpecialistDao specialistDao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-    }
+        Bundle extras = getIntent().getExtras();
 
+        if (extras != null) {
+            userid = extras.getInt("userId");
+        }
+        specialistDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db")
+                .fallbackToDestructiveMigration()
+                .allowMainThreadQueries()   //Allows room to do operation on main thread
+                .build()
+                .getSpecialistDao();
+        List<Specialist> specialists = new ArrayList<>();
+        specialists = specialistDao.getSpecialists(userid);
+
+        helperRecyclerView = findViewById(R.id.helperRecyclerView);
+        helperRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        helperRecyclerAdapter = new HelperRecyclerAdapter(this, specialists);
+        //when row  is pressed this function is executed.
+        helperRecyclerView.setAdapter(helperRecyclerAdapter);
+        HelperRecyclerAdapter.addActionCallback(new HelperRecyclerAdapter.ActionCallback() {
+
+            @Override
+            public void onLongClickListener(Specialist specialist) {
+                Intent intent = new Intent(MenuActivity.this, HelperActivity.class);
+                loadSpecialists();
+
+                startActivity(intent);
+                finish();
+            }
+
+
+        });
+
+
+    }
+    private void loadSpecialists() {
+        helperRecyclerAdapter.updateData(specialistDao.getSpecialists(userid));
+    }
     public void changeActivity(View view) {
         if(view.getId() == R.id.messageButton) {
             Intent i = new Intent(this, MessageActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }
+        if(view.getId() == R.id.addButton) {
+            Intent i = new Intent(this, AddHelperActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.putExtra("UserId",userid);
+            Log.i("test", String.valueOf(userid));
+            startActivity(i);
+        }
         if(view.getId() == R.id.plannerButton) {
             Intent i = new Intent(this, PlannerActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        }
+        if(view.getId() == R.id.profileButton) {
+            Intent i = new Intent(this, ProfileActivity.class);
+            i.putExtra("UserId",userid);
             startActivity(i);
         }
     }

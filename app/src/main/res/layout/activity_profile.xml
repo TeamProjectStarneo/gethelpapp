@@ -5,23 +5,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".HelperActivity">
+    tools:context=".ProfileActivity">
+
+    <TextView
+        android:id="@+id/phoneLabel3"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addressLabel"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:text="Phone:"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/addressLabel3"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailLabel"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:text="Address: "
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/emailLabel3"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameLabel"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:text="Email: "
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/nameLabel3"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileImage"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:text="Name:"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
 
     <LinearLayout
-        android:id="@+id/helperHeader"
+        android:id="@+id/profileHeader"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:gravity="top">
 
-        <Button
-            android:id="@+id/backButton"
+        <TextView
+            android:id="@+id/blank"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/grey"
-            android:text="Back"
-            android:textSize="25sp"
-            android:drawableTop="@drawable/back_icon"
-            android:onClick="changeActivity"
+            android:layout_weight="1"
             />
 
         <Button
@@ -51,89 +96,72 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/helperImage"
+        android:id="@+id/profileImage"
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/helperHeader"
+        android:layout_below="@id/profileHeader"
         android:layout_marginTop="20dp"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/placeholder_helper" />
+        app:srcCompat="@drawable/placeholder_profile" />
 
     <TextView
         android:id="@+id/nameLabel"
-        android:layout_width="match_parent"
+        android:layout_width="127dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/helperImage"
+        android:layout_below="@id/profileImage"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:text="Name: Dr Pepper"
-        android:textSize="25sp"
+        android:text="Name:"
         android:textColor="@color/black"
-        />
-
-    <TextView
-        android:id="@+id/jobLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/nameLabel"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:text="Job: Doctor"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        />
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/emailLabel"
-        android:layout_width="match_parent"
+        android:layout_width="123dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/jobLabel"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/nameLabel"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="50dp"
-        android:text="Email: drpepper@email.com"
-        android:textSize="25sp"
+        android:text="Email: "
         android:textColor="@color/black"
-        />
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/addressLabel"
-        android:layout_width="match_parent"
+        android:layout_width="127dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/emailLabel"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="50dp"
-        android:text="Address: Dublin 3"
-        android:textSize="25sp"
+        android:text="Address: "
         android:textColor="@color/black"
-        />
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/phoneLabel"
-        android:layout_width="match_parent"
+        android:layout_width="127dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/addressLabel"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="50dp"
-        android:text="Phone: 0831234567"
-        android:textSize="25sp"
+        android:text="Phone:"
         android:textColor="@color/black"
-        />
+        android:textSize="25sp" />
 
     <Button
-        android:id="@+id/messageButton"
+        android:id="@+id/backButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Message"
+        android:text="Back"
         android:textSize="25sp"
         android:textAlignment="center"
-        android:drawableBottom="@drawable/message_icon"
+        android:drawableBottom="@drawable/back_icon"
         android:background="@color/grey"
         android:onClick="changeActivity"
         />

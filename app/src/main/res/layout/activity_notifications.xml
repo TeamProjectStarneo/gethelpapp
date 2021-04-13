@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".HelpActivity">
+    tools:context=".NotificationsActivity">
 
     <LinearLayout
-        android:id="@+id/helpHeader"
+        android:id="@+id/notificationsHeader"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:gravity="top">
@@ -43,56 +43,46 @@
             />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/emailSJOGButton"
+    <Switch
+        android:id="@+id/newMessageSwitch"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_below="@id/helpHeader"
+        android:layout_below="@id/notificationsHeader"
         android:layout_marginTop="10dp"
         android:background="@color/lightGrey"
-        android:text="Email SJOG"
+        android:text="New Message Notification"
         android:textSize="25sp"
         android:textColor="@color/black"
-        android:onClick="changeActivity"
+        android:switchMinWidth="75dp"
+        android:checked="true"
         />
 
-    <Button
-        android:id="@+id/tutorialButton"
+    <Switch
+        android:id="@+id/soundSwitch"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_below="@id/emailSJOGButton"
+        android:layout_below="@id/newMessageSwitch"
         android:layout_marginTop="10dp"
         android:background="@color/lightGrey"
-        android:text="Tutorial PDF"
+        android:text="Sound Notification"
         android:textSize="25sp"
         android:textColor="@color/black"
-        android:onClick="changeActivity"
+        android:switchMinWidth="75dp"
+        android:checked="true"
         />
 
-    <Button
-        android:id="@+id/videoTutorialButton"
+    <Switch
+        android:id="@+id/vibrationSwitch"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_below="@id/tutorialButton"
+        android:layout_below="@id/soundSwitch"
         android:layout_marginTop="10dp"
         android:background="@color/lightGrey"
-        android:text="Video Tutorial"
+        android:text="Vibration Notification"
         android:textSize="25sp"
         android:textColor="@color/black"
-        android:onClick="changeActivity"
-        />
-
-    <Button
-        android:id="@+id/aboutButton"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_below="@id/videoTutorialButton"
-        android:layout_marginTop="10dp"
-        android:background="@color/lightGrey"
-        android:text="About"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        android:onClick="changeActivity"
+        android:switchMinWidth="75dp"
+        android:checked="false"
         />
 
     <Button

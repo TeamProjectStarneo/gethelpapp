@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".EditHelperActivity">
+
+    <LinearLayout
+        android:id="@+id/helperHeader"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="top">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Back"
+            android:textSize="25sp"
+            android:drawableTop="@drawable/back_icon"
+            android:onClick="changeActivity"
+            />
+
+        <Button
+            android:id="@+id/appHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GET HELP"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:drawableTop="@drawable/app_icon_small"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            android:onClick="changeActivity"
+            />
+
+        <TextView
+            android:id="@+id/blank"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/helperImage"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/helperHeader"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/placeholder_helper" />
+
+    <Button
+        android:id="@+id/changeProfileImage"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/helperImage"
+        android:layout_marginTop="-50dp"
+        android:text="Upload"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:drawableLeft="@drawable/upload_icon"
+        />
+
+    <TextView
+        android:id="@+id/nameLabel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/helperImage"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Name:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/nameField1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameLabel1"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="Dr Pepper"
+        />
+
+    <TextView
+        android:id="@+id/jobLabel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameField1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Job:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/jobField1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jobLabel1"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="Doctor"
+        />
+
+    <TextView
+        android:id="@+id/emailLabel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jobField1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Email:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/emailField1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailLabel1"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="drpepper@email.com"
+        />
+
+    <TextView
+        android:id="@+id/addressLabel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailField1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Address:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/addressField1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addressLabel1"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="Dublin 3"
+        />
+
+    <TextView
+        android:id="@+id/phoneLabel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addressField1"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Phone:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/phoneField1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phoneLabel1"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="0831234567"
+        />
+
+    <Button
+        android:id="@+id/addButton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/grey"
+        android:drawableBottom="@drawable/add_icon"
+        android:onClick="changeActivity"
+        android:text="Add"
+        android:textAlignment="center"
+        android:textSize="25sp" />
+
+</RelativeLayout>

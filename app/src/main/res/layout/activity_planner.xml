@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlannerActivity">
+    tools:context=".RemindersActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -34,13 +34,13 @@
         />
 
     <Button
-        android:id="@+id/plannerButton"
+        android:id="@+id/remindersButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/menuButton"
-        android:text="Planner"
+        android:text="Reminders"
         android:clickable="false"
         />
 
