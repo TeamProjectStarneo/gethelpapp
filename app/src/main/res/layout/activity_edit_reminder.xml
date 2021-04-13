@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".EditReminderActivity">
+
+    <LinearLayout
+        android:id="@+id/editReminderHeader"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="top">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Back"
+            android:textSize="25sp"
+            android:drawableTop="@drawable/back_icon"
+            android:onClick="changeActivity"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/appHeader"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:text="GET HELP"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:drawableTop="@drawable/app_icon_small"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            android:onClick="changeActivity"
+            />
+
+        <TextView
+            android:id="@+id/blank"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/helperLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editReminderHeader"
+        android:layout_marginTop="100dp"
+        android:text="With who:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        />
+
+    <LinearLayout
+        android:id="@+id/helperMenu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@id/helperLabel"
+        android:background="@color/lightGrey"
+        >
+        <Spinner
+            android:id="@+id/helperSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:spinnerMode="dropdown"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/datePickerLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/helperMenu"
+        android:layout_marginTop="75dp"
+        android:text="Date:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:theme="@style/PickerStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/datePickerLabel"
+        android:layout_centerHorizontal="true"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        />
+
+    <Button
+        android:id="@+id/downButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:drawableBottom="@drawable/down_icon"
+        android:background="@color/lightGrey"
+        android:onClick="changeActivity"
+        />
+
+</RelativeLayout>

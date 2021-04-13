@@ -9,7 +9,13 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ReminderActivity"></activity>
+        <activity
+            android:name=".EditReminderPart2Activity"
+            android:noHistory="true" />
+        <activity
+            android:name=".EditReminderActivity"
+            android:noHistory="true" />
+        <activity android:name=".ReminderActivity" />
         <activity android:name=".MessageActivity" />
         <activity android:name=".EditHelperActivity" />
         <activity android:name=".HelpActivity" />
