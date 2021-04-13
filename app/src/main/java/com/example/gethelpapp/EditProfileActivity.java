@@ -51,9 +51,24 @@ public class EditProfileActivity extends AppCompatActivity {
               //  String passwordConf = registerConfirmPassword.getText().toString().trim();
 
                 String name = nameField.getText().toString();
+                String email = emailField.getText().toString().trim();
+                String address = addressField.getText().toString().trim();
+                String phone = phoneField.getText().toString().trim();
                 if(name.length()>1) {
 
                     user.setName(name);
+                }
+                if(email.length()>1) {
+
+                    user.setEmail(name);
+                }
+                if(address.length()>1) {
+
+                    user.setAddress(name);
+                }
+                if(phone.length()>1) {
+
+                    user.setPhone(name);
                 }
 
 

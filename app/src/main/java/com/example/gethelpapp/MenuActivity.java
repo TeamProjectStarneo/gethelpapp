@@ -93,6 +93,10 @@ public class MenuActivity extends AppCompatActivity {
             i.putExtra("UserId",userid);
             startActivity(i);
         }
+        if(view.getId() == R.id.messageButton) {
+            Intent i = new Intent(this, InboxActivity.class);
+            startActivity(i);
+        }
     }
 
     public void showEmergency(View v) {

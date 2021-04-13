@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity  {
                 if (password.equals(passwordConf)) {
                     User user = new User(name, password, email);
                     userDao.insert(user);
-                    Intent moveToLogin = new Intent(RegisterActivity.this, LoginRegisterActivity.class);
+                    Intent moveToLogin = new Intent(RegisterActivity.this, SuccessActivity.class);
                     startActivity(moveToLogin);
 
                 } else {
