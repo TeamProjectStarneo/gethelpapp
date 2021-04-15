@@ -14,8 +14,11 @@ import java.util.List;
 
 @Dao
 public interface SpecialistDao {
-    @Query("SELECT * FROM Specialist where email= :email and userId= :userId")
-    Specialist getSpecialist(String email,int userId);
+    @Query("SELECT * FROM Specialist where specialistId= :specialistId and userId= :userId")
+    Specialist getSpecialist(int specialistId,int userId);
+
+    @Query("Select name FROM Specialist where userId =:userId ")
+    public List<String> getSpecialistNames(int userId);
 
     @Query("Select * FROM Specialist where userId= :UserId")
     public List<Specialist> getSpecialists(int UserId);

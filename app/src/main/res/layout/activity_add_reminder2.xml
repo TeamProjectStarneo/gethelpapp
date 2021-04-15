@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".AddReminderActivity">
+
+    <LinearLayout
+        android:id="@+id/editReminderPart2Header"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="top">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Back"
+            android:textSize="25sp"
+            android:drawableTop="@drawable/back_icon"
+            android:onClick="changeActivity"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/appHeader"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:text="GET HELP"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:drawableTop="@drawable/app_icon_small"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            android:onClick="changeActivity"
+            />
+
+        <TextView
+            android:id="@+id/blank"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/upButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editReminderPart2Header"
+        android:drawableTop="@drawable/up_icon"
+        android:background="@color/lightGrey"
+        android:onClick="changeActivity"
+        />
+
+    <TextView
+        android:id="@+id/timePickerLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/upButton"
+        android:layout_marginTop="25dp"
+        android:text="Time:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        />
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:theme="@style/PickerStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timePickerLabel"
+        android:layout_centerHorizontal="true"
+        android:timePickerMode="spinner"
+        />
+
+    <TextView
+        android:id="@+id/whereLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timePicker"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Where:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/whereField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whereLabel"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="The Clinic"
+        />
+
+    <TextView
+        android:id="@+id/whyLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whereField"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Why:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/whyField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whyLabel"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="Stomach surgery"
+        />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/grey"
+        android:drawableBottom="@drawable/add_icon"
+        android:onClick="changeActivity"
+        android:text="Save"
+        android:textAlignment="center"
+        android:textSize="25sp" />
+
+</RelativeLayout>

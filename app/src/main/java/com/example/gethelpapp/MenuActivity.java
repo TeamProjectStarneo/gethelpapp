@@ -57,9 +57,12 @@ public class MenuActivity extends AppCompatActivity {
             public void onLongClickListener(Specialist specialist) {
                 Intent intent = new Intent(MenuActivity.this, HelperActivity.class);
                 loadSpecialists();
-
+                int specialistId = specialist.getSpecialistId();
+                int userId = specialist.getUserId();
+                intent.putExtra("SpecialistId",specialistId);
+                intent.putExtra("UserId",userId);
                 startActivity(intent);
-                finish();
+
             }
 
 
@@ -83,9 +86,11 @@ public class MenuActivity extends AppCompatActivity {
             Log.i("test", String.valueOf(userid));
             startActivity(i);
         }
-        if(view.getId() == R.id.plannerButton) {
-            Intent i = new Intent(this, PlannerActivity.class);
+        if(view.getId() == R.id.remindersButton) {
+            Intent i = new Intent(this, RemindersActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.putExtra("UserId",userid);
+            Log.i("test", String.valueOf(userid));
             startActivity(i);
         }
         if(view.getId() == R.id.profileButton) {
@@ -95,6 +100,10 @@ public class MenuActivity extends AppCompatActivity {
         }
         if(view.getId() == R.id.messageButton) {
             Intent i = new Intent(this, InboxActivity.class);
+            startActivity(i);
+        }
+        if(view.getId() == R.id.settingsButton) {
+            Intent i = new Intent(this, SettingsActivity.class);
             startActivity(i);
         }
     }

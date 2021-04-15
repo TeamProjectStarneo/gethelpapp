@@ -9,6 +9,7 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".EditReminderPart2Activity"
             android:noHistory="true" />
@@ -16,6 +17,15 @@
             android:name=".EditReminderActivity"
             android:noHistory="true" />
         <activity android:name=".ReminderActivity" />
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AddHelperActivity" />
+        <activity android:name=".AddReminderActivity" />
         <activity android:name=".MessageActivity" />
         <activity android:name=".EditHelperActivity" />
         <activity android:name=".HelpActivity" />
@@ -35,12 +45,10 @@
         <activity android:name=".HelperActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".LoginRegisterActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"
+        android:maxSdkVersion="29" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
 </manifest>

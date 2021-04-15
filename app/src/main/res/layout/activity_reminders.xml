@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MenuActivity">
+
+    <LinearLayout
+        android:id="@+id/menuHeader"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="top">
+
+        <Button
+            android:id="@+id/profileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Profile"
+            android:textSize="25sp"
+            android:onClick="changeActivity"
+            android:drawableTop="@drawable/placeholder_profile_icon"
+            android:layout_weight="0.25"
+            />
+
+        <Button
+            android:id="@+id/appHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Get Help"
+            android:textSize="25sp"
+            android:drawableTop="@drawable/app_icon_small"
+            android:layout_weight="0.5"
+            />
+
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Settings"
+            android:textSize="25sp"
+            android:onClick="changeActivity"
+            android:drawableTop="@drawable/settings_icon"
+            android:layout_weight="0.25"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/searchBar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/menuHeader"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/searchField"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/menuHeader"
+            android:layout_weight="0.9"
+            android:background="@color/lightGrey"
+            android:textSize="25sp"
+            android:singleLine="true"
+            android:hint="Search..."
+            />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:drawableRight="@drawable/search_icon"
+            android:background="@color/lightGrey"
+            android:text=""
+            android:textSize="25sp"
+            />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/remindersRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchBar"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="175dp"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/addEmergencyBar"
+        android:layout_height="80dp"
+        android:layout_width="match_parent"
+        android:layout_above="@id/menuFooter"
+        android:orientation="horizontal">
+        >
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:background="@color/lightGrey"
+            android:text="Add"
+            android:textSize="25sp"
+            android:onClick="changeActivity"
+            android:drawableTop="@drawable/add_icon"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/lightGrey"
+            android:drawableTop="@drawable/edit_icon"
+            android:onClick="showEmergency"
+            android:text="Edit"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menuFooter"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/messageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Inbox"
+            android:textSize="25sp"
+            android:onClick="changeActivity"
+            android:drawableTop="@drawable/message_icon"
+            android:layout_weight="0.3"
+            />
+
+        <Button
+            android:id="@+id/menuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:clickable="false"
+            android:text="Menu"
+            android:textSize="25sp"
+            android:drawableTop="@drawable/menu_icon"
+            android:layout_weight="0.3"
+            />
+
+        <Button
+            android:id="@+id/remindersButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Reminders"
+            android:textSize="25sp"
+            android:onClick="changeActivity"
+            android:drawableTop="@drawable/reminder_icon"
+            android:layout_weight="0.3"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

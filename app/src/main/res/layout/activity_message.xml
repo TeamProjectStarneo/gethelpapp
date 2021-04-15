@@ -1,47 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MessageActivity">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/messageHeader"
+        android:layout_height="75dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Message Page"
-        android:textAlignment="center"
-        android:layout_marginTop="100dp"/>
+        android:gravity="top">
 
-    <Button
-        android:id="@+id/messageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_centerHorizontal="true"
-        android:clickable="false"
-        android:text="Message"
-        />
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:text="Back"
+            android:textSize="25sp"
+            android:onClick="changeActivity"
+            android:drawableTop="@drawable/back_icon"
+            android:layout_weight="1"
+            />
 
-    <Button
-        android:id="@+id/menuButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/messageButton"
-        android:text="Menu"
-        android:onClick="changeActivity"
-        />
+        <ImageView
+            android:id="@+id/helperImage"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/placeholder_helper" />
 
-    <Button
-        android:id="@+id/plannerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/menuButton"
-        android:text="Planner"
-        android:onClick="changeActivity"
-        />
+        <TextView
+            android:id="@+id/helperNameView"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:background="@color/grey"
+            android:text="Doctor:\nDr Pepper"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/messageFooter"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/uploadButton"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_button"
+            android:drawableTop="@drawable/upload_icon"
+            />
+
+        <Button
+            android:id="@+id/micButton"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_button"
+            android:drawableTop="@drawable/mic_icon"
+            />
+
+        <EditText
+            android:id="@+id/searchField"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/menuHeader"
+            android:layout_weight="0.9"
+            android:background="@color/lightGrey"
+            android:textSize="25sp"
+            />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:drawableRight="@drawable/send_icon"
+            android:background="@color/lightGrey"
+            android:text=""
+            android:textSize="25sp"
+            />
+    </LinearLayout>
 
 </RelativeLayout>

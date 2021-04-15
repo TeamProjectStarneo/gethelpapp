@@ -32,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = (Button) findViewById(R.id.loginButton);
 
         dataBase = Room.databaseBuilder(this, UserDataBase.class, "atabase.db")
+                .fallbackToDestructiveMigration()
                 .allowMainThreadQueries()
                 .build();
         db = dataBase.getUserDao();

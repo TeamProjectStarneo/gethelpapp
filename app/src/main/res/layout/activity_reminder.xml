@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ReminderActivity">
+
+    <LinearLayout
+        android:id="@+id/reminderHeader"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="top">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Back"
+            android:textSize="25sp"
+            android:drawableTop="@drawable/back_icon"
+            android:onClick="changeActivity"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:id="@+id/appHeader"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:text="GET HELP"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:drawableTop="@drawable/app_icon_small"
+            android:background="@color/grey"
+            android:layout_weight="1"
+            android:onClick="changeActivity"
+            />
+
+        <Button
+            android:id="@+id/editButton"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Edit"
+            android:textSize="25sp"
+            android:drawableTop="@drawable/edit_icon"
+            android:onClick="changeActivity"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/appointmentLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminderHeader"
+        android:layout_marginTop="20dp"
+        android:text="Appointment with\nDoctor: Dr Pepper"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        />
+
+    <ImageView
+        android:id="@+id/helperImage"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/appointmentLabel"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/placeholder_helper" />
+
+    <TextView
+        android:id="@+id/dateLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/helperImage"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:text="Date: 24 April 2021"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/timeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateLabel"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:text="Time: 3:00 AM"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/whereLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timeLabel"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:text="Where: The Clinic"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/whyLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whereLabel"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:text="Why: Stomach surgery"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+    <LinearLayout
+        android:id="@+id/reminderFooter"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/messageButton"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Inbox"
+            android:textSize="25sp"
+            android:onClick="changeActivity"
+            android:drawableTop="@drawable/message_icon"
+            android:layout_weight="0.8"
+            />
+
+        <Button
+            android:id="@+id/menuButton"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Menu"
+            android:textSize="25sp"
+            android:drawableTop="@drawable/menu_icon"
+            android:layout_weight="1"
+            android:onClick="changeActivity"
+            />
+
+        <Button
+            android:id="@+id/remindersButton"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="Reminders"
+            android:textSize="25sp"
+            android:drawableTop="@drawable/reminder_icon"
+            android:layout_weight="1"
+            android:onClick="changeActivity"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

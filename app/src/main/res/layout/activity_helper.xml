@@ -7,6 +7,30 @@
     android:background="@color/white"
     tools:context=".HelperActivity">
 
+    <TextView
+        android:id="@+id/addressLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailLabel"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:text="Address:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/jobLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameLabel"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:text="Job: "
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
     <LinearLayout
         android:id="@+id/helperHeader"
         android:layout_height="wrap_content"
@@ -64,68 +88,99 @@
 
     <TextView
         android:id="@+id/nameLabel"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/helperImage"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="25dp"
-        android:text="Name: Dr Pepper"
-        android:textSize="25sp"
+        android:text="Name: "
         android:textColor="@color/black"
-        />
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/nameLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/helperImage"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="25dp"
+        android:text="Name: "
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/jobLabel"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/nameLabel"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
-        android:text="Job: Doctor"
-        android:textSize="25sp"
+        android:text="Job: "
         android:textColor="@color/black"
-        />
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/emailLabel"
-        android:layout_width="match_parent"
+        android:layout_width="82dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/jobLabel"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
-        android:text="Email: drpepper@email.com"
-        android:textSize="25sp"
+        android:text="Email:"
         android:textColor="@color/black"
-        />
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/emailLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/jobLabel"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:text="Email:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/addressLabel"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/emailLabel"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
-        android:text="Address: Dublin 3"
-        android:textSize="25sp"
+        android:text="Address:"
         android:textColor="@color/black"
-        />
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/phoneLabel"
-        android:layout_width="match_parent"
+        android:layout_width="92dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/addressLabel"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="25dp"
-        android:text="Phone: 0831234567"
-        android:textSize="25sp"
+        android:text="Phone:"
         android:textColor="@color/black"
-        />
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/phoneLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addressLabel"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:text="Phone:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/messageButton"
