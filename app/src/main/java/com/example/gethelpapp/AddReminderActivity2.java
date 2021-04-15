@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.Inflater;
 
-public class AddReminderActivity extends AppCompatActivity {
+public class AddReminderActivity2 extends AppCompatActivity {
     Button addButton;
     Button upButton;
     DatePicker datePicker;
@@ -43,7 +43,7 @@ public class AddReminderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_reminder);
+        setContentView(R.layout.activity_add_reminder2);
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -55,29 +55,18 @@ public class AddReminderActivity extends AppCompatActivity {
         datePicker = findViewById(R.id.datePicker);
         addButton = findViewById(R.id.saveButton);
         upButton = findViewById(R.id.upButton);
-        loadSpinnerData();
+
         //setContentView(R.layout.activity_add_reminder2);
-
-
         addButton.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                int day = datePicker.getDayOfMonth();
-                int month = datePicker.getMonth() + 1;
-                int year = datePicker.getYear();
-                String name = "Namedoc";
-                date = day + "/" + month + "/" + year;
-                Log.d("date", date);
 
-                Intent i = new Intent(AddReminderActivity.this, AddReminderActivity2.class);
-                i.putExtra("Date",date);
-                i.putExtra("Name",name);
+
+                Intent i = new Intent(AddReminderActivity2.this, AddReminderActivity.class);
                 startActivity(i);
             }
         });
-
-
 
 
         //specialistDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db").allowMainThreadQueries().build().getSpecialistDao();
@@ -109,17 +98,7 @@ public class AddReminderActivity extends AppCompatActivity {
 */
     }
 
-    public void loadSpinnerData(){
-        specialistDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db")
-                .allowMainThreadQueries().build().getSpecialistDao();
 
-        List<String> specialists = new ArrayList<>();
-        specialists = specialistDao.getSpecialistNames(userId);
-        Log.i("SpecialistName",specialists.get(0));
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, specialists);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        helpSpinner.setAdapter(adapter);
-    }
     public void changeActivity(View v) {
         if(v.getId() == R.id.appHeader) {
             Intent i = new Intent(this, MenuActivity.class);

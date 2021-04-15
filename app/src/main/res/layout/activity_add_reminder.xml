@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -102,14 +106,95 @@
         android:scrollbarThumbVertical="@drawable/down_icon"
         android:theme="@style/PickerStyle" />
 
-    <Button
-        android:id="@+id/downButton"
+    <TextView
+        android:id="@+id/timePickerLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:drawableBottom="@drawable/down_icon"
-        android:background="@color/lightGrey"
-        android:onClick="changeActivity"
+        android:layout_below="@id/datePicker"
+        android:layout_marginTop="25dp"
+        android:text="Time:"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timePickerLabel"
+        android:layout_marginTop="28dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="25dp"
+        android:theme="@style/PickerStyle"
+        android:timePickerMode="spinner" />
+
+    <TextView
+        android:id="@+id/whereLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timePicker"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Where:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
         />
 
+    <EditText
+        android:id="@+id/whereField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whereLabel"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="The Clinic"
+        />
+
+    <TextView
+        android:id="@+id/whyLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whereField"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:text="Why:"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        />
+
+    <EditText
+        android:id="@+id/whyField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whyLabel"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/lightGrey"
+        android:textSize="25sp"
+        android:singleLine="true"
+        android:hint="Stomach surgery"
+        />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whyField"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/grey"
+        android:drawableBottom="@drawable/add_icon"
+        android:onClick="changeActivity"
+        android:text="Save"
+        android:textAlignment="center"
+        android:textSize="25sp" />
+
+
 </RelativeLayout>
+
+</ScrollView>

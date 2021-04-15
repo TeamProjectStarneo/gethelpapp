@@ -26,6 +26,7 @@
         </activity>
         <activity android:name=".AddHelperActivity" />
         <activity android:name=".AddReminderActivity" />
+        <activity android:name=".AddReminderActivity2" />
         <activity android:name=".MessageActivity" />
         <activity android:name=".EditHelperActivity" />
         <activity android:name=".HelpActivity" />
