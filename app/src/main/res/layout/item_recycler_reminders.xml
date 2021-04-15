@@ -13,24 +13,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/whyLabel1"
-                android:layout_width="38dp"
-                android:layout_height="21dp"
-                android:layout_marginStart="136dp"
-                android:layout_marginTop="12dp"
-                android:text="Test"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="93dp"
+                android:layout_height="87dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/placeholder_helper" />
+
 
             <View
                 android:id="@+id/divider"
@@ -41,11 +33,12 @@
 
             <TextView
                 android:id="@+id/dateLabel1"
-                android:layout_width="38dp"
-                android:layout_height="21dp"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="32dp"
+                android:layout_width="83dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="132dp"
+                android:layout_marginTop="64dp"
                 android:text="Test"
+                android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,9 +46,10 @@
                 android:id="@+id/doctorLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="132dp"
+                android:layout_marginTop="16dp"
                 android:text="Dentist"
+                android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

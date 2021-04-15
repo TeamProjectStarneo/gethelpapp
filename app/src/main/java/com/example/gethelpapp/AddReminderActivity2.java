@@ -16,11 +16,13 @@ import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.gethelpapp.db.data.ReminderDao;
 import com.example.gethelpapp.db.data.SpecialistDao;
 import com.example.gethelpapp.db.data.UserDataBase;
+import com.example.gethelpapp.db.model.Reminder;
 import com.example.gethelpapp.db.model.Specialist;
 import com.example.gethelpapp.db.model.User;
 
@@ -31,13 +33,14 @@ import java.util.zip.Inflater;
 public class AddReminderActivity2 extends AppCompatActivity {
     Button addButton;
     Button upButton;
-    DatePicker datePicker;
+    TimePicker timePicker;
     Spinner helpSpinner;
     String date;
     Button downButton;
-    //EditText emailField, phoneField, addressField, nameField, jobField;
+    String name;
+    EditText whyLabel, whereLabel;
+
     private ReminderDao reminderDao;
-    private SpecialistDao specialistDao;
     static int userId;
     Inflater inflater;
     @Override
@@ -48,23 +51,69 @@ public class AddReminderActivity2 extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             userId = extras.getInt("UserId");
+            name = extras.getString("Name");
+            date = extras.getString("Date");
         }
         Log.i("test", String.valueOf(userId));
         helpSpinner = findViewById(R.id.helperSpinner);
 
-        datePicker = findViewById(R.id.datePicker);
+        timePicker = findViewById(R.id.timePicker);
         addButton = findViewById(R.id.saveButton);
         upButton = findViewById(R.id.upButton);
-
+        whyLabel = findViewById(R.id.whyField);
+        whereLabel = findViewById(R.id.whereField);
+        reminderDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db").allowMainThreadQueries()
+                .build().getReminderDao();
         //setContentView(R.layout.activity_add_reminder2);
         addButton.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
+                String why = null;
+                String where = null;
+                String time = null;
+                String format;
+                Reminder reminder = new Reminder(userId, name, date, time, where, why);
 
+                int hour = timePicker.getHour();
+                int minute = timePicker.getMinute();
 
-                Intent i = new Intent(AddReminderActivity2.this, AddReminderActivity.class);
-                startActivity(i);
+                if (hour == 0) {
+                    hour += 12;
+                    format = "AM";
+                } else if (hour == 12) {
+                    format = "PM";
+                } else if (hour > 12) {
+                    hour -= 12;
+                    format = "PM";
+                } else {
+                    format = "AM";
+                }
+                time = hour +":" + minute+ " " + format;
+                why = whyLabel.getText().toString().trim();
+                where = whereLabel.getText().toString().trim();
+                if(name.length()>1) {
+
+                    reminder.setDate(name);
+                }
+                if(date.length()>1) {
+
+                    reminder.setDate(date);
+                }
+                if(time.length()>1) {
+
+                    reminder.setTime(name);
+                }
+                if(why.length()>1) {
+
+                    reminder.setWhy(name);
+                }
+                if(where.length()>1) {
+
+                    reminder.setWhere(name);
+                }
+                reminderDao.update(reminder);
+
             }
         });
 

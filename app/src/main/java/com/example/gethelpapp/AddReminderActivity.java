@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -34,6 +35,7 @@ public class AddReminderActivity extends AppCompatActivity {
     DatePicker datePicker;
     Spinner helpSpinner;
     String date;
+    String name;
     Button downButton;
     //EditText emailField, phoneField, addressField, nameField, jobField;
     private ReminderDao reminderDao;
@@ -55,7 +57,16 @@ public class AddReminderActivity extends AppCompatActivity {
         datePicker = findViewById(R.id.datePicker);
         addButton = findViewById(R.id.saveButton);
         upButton = findViewById(R.id.upButton);
-        loadSpinnerData();
+        specialistDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db")
+                .allowMainThreadQueries().build().getSpecialistDao();
+
+        List<String> specialists = new ArrayList<>();
+        specialists = specialistDao.getSpecialistNames(userId);
+        Log.i("SpecialistName",specialists.get(0));
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, specialists);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        helpSpinner.setAdapter(adapter);
+
         //setContentView(R.layout.activity_add_reminder2);
 
 
@@ -66,7 +77,7 @@ public class AddReminderActivity extends AppCompatActivity {
                 int day = datePicker.getDayOfMonth();
                 int month = datePicker.getMonth() + 1;
                 int year = datePicker.getYear();
-                String name = "Namedoc";
+                name = "Namedoc";
                 date = day + "/" + month + "/" + year;
                 Log.d("date", date);
 
@@ -77,7 +88,19 @@ public class AddReminderActivity extends AppCompatActivity {
             }
         });
 
+        helpSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                Log.v("item", (String) parent.getItemAtPosition(position));
+                name = (String) parent.getItemAtPosition(position);
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+            }
+        });
 
 
         //specialistDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db").allowMainThreadQueries().build().getSpecialistDao();
@@ -110,15 +133,7 @@ public class AddReminderActivity extends AppCompatActivity {
     }
 
     public void loadSpinnerData(){
-        specialistDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db")
-                .allowMainThreadQueries().build().getSpecialistDao();
 
-        List<String> specialists = new ArrayList<>();
-        specialists = specialistDao.getSpecialistNames(userId);
-        Log.i("SpecialistName",specialists.get(0));
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, specialists);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        helpSpinner.setAdapter(adapter);
     }
     public void changeActivity(View v) {
         if(v.getId() == R.id.appHeader) {

@@ -18,11 +18,20 @@ public class Reminder implements Serializable {
 
 
 
-    public Date date;
-    private String Time ;
+    public String date;
+    private String time ;
     private String where;
     private String why;
 
+    public Reminder( int userId, String doctorName, String date, String time, String where, String why) {
+
+        this.userId = userId;
+        this.doctorName = doctorName;
+        this.date = date;
+        this.time = time;
+        this.where = where;
+        this.why = why;
+    }
 
     public int getReminderId() {
         return reminderId;
@@ -48,20 +57,20 @@ public class Reminder implements Serializable {
         this.doctorName = doctorName;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(long date) {
-        this.date = new Date(date);
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getTime() {
-        return Time;
+        return time;
     }
 
     public void setTime(String time) {
-        Time = time;
+        time = time;
     }
 
     public String getWhere() {
@@ -89,7 +98,7 @@ public class Reminder implements Serializable {
                 "userId=" + userId +
                 ", doctorName=" + doctorName +
                 ", date=" + date +
-                ", Time='" + Time + '\'' +
+                ", Time='" + time + '\'' +
                 ", where='" + where + '\'' +
                 ", why='" + why + '\'' +
                 ", reminderId=" + reminderId +
