@@ -9,6 +9,13 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".EditReminderPart2Activity"
             android:noHistory="true" />
@@ -34,13 +41,7 @@
         <activity android:name=".InboxActivity" />
         <activity android:name=".HelperActivity" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".LoginRegisterActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".LoginRegisterActivity"/>
     </application>
 
 </manifest>
