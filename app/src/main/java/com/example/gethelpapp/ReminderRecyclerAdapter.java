@@ -84,7 +84,7 @@ public class ReminderRecyclerAdapter extends RecyclerView.Adapter<ReminderRecycl
 
             dateLabel1 = itemView.findViewById(R.id.dateLabel1);
             doctorLabel = itemView.findViewById(R.id.doctorLabel);
-            whyLabel1 = itemView.findViewById(R.id.whyLabel);
+            whyLabel1 = itemView.findViewById(R.id.dateLabel1);
             imageView= itemView.findViewById(R.id.imageView);
 
 
@@ -95,15 +95,15 @@ public class ReminderRecyclerAdapter extends RecyclerView.Adapter<ReminderRecycl
 
             Reminder reminder = reminderList.get(position);
 
-            String why = reminder.getWhy();
+            String why = String.valueOf(reminder.getWhy());
             Log.i("why",why);
             if(why.length()>1) {
-               // whyLabel1.setText(why);
+                whyLabel1.setText(why);
             }
             String name = String.valueOf(reminder.getDoctorName());
             Log.i("name",name);
             if(name.length()>1) {
-              //  doctorLabel.setText(name);
+               doctorLabel.setText(name);
             }
 
             String date = String.valueOf(reminder.getDate());

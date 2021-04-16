@@ -83,21 +83,21 @@ public class EditHelperActivity extends AppCompatActivity {
 
                     specialist.setName(name);
                 }
-                if(name.length()>1) {
+                if(job.length()>1) {
 
                     specialist.setJob(job);
                 }
                 if(email.length()>1) {
 
-                    specialist.setEmail(name);
+                    specialist.setEmail(email);
                 }
                 if(address.length()>1) {
 
-                    specialist.setAddress(name);
+                    specialist.setAddress(address);
                 }
                 if(phone.length()>1) {
 
-                    specialist.setPhone(name);
+                    specialist.setPhone(phone);
                 }
 
 
