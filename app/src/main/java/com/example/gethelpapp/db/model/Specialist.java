@@ -1,6 +1,8 @@
 package com.example.gethelpapp.db.model;
 
 
+import android.net.Uri;
+
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -20,14 +22,18 @@ public class Specialist implements Serializable {
         return userId;
     }
 
+
+
+    private String image;
     private int userId;
     private String phone;
     private String email ;
     private String address;
     private String job;
 
-    public Specialist(int userId,String name,String phone,String email,String address,String job) {
+    public Specialist(int userId,String image,String name,String phone,String email,String address,String job) {
         this.userId = userId;
+        this.image = image;
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -93,7 +99,13 @@ public class Specialist implements Serializable {
     public void setAddress(String address) {
         this.address = address;
     }
+    public String getImage() {
+        return image;
+    }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
     @Override
     public String toString() {
         return "Specialist{" +

@@ -60,15 +60,15 @@ public class EditProfileActivity extends AppCompatActivity {
                 }
                 if(email.length()>1) {
 
-                    user.setEmail(name);
+                    user.setEmail(email);
                 }
                 if(address.length()>1) {
 
-                    user.setAddress(name);
+                    user.setAddress(address);
                 }
                 if(phone.length()>1) {
 
-                    user.setPhone(name);
+                    user.setPhone(phone);
                 }
 
 

@@ -4,21 +4,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.gethelpapp.db.data.UserDataBase;
 import com.example.gethelpapp.db.model.User;
 import com.example.gethelpapp.db.data.UserDao;
 
+import java.io.InputStream;
+
 public class LoginActivity extends AppCompatActivity {
 
 
     Button loginButton;
     EditText loginEmail,loginPassword;
+
     UserDataBase dataBase;
     UserDao db;
     private UserDao userDao;
@@ -38,6 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         db = dataBase.getUserDao();
 
 
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (user != null) {
                     int id = user.getId();
                     Intent i = new Intent(LoginActivity.this, MenuActivity.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     i.putExtra("User", user);
                     i.putExtra("userId",id);
                     startActivity(i);
@@ -60,7 +69,15 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    public void changeActivity(View view) {
+        if(view.getId() == R.id.backButton) {
+            Intent i = new Intent(this, LoginRegisterActivity.class);
+            finish();
+        }
 
+
+
+    }
 
 
 

@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +22,9 @@ import com.example.gethelpapp.db.data.UserDataBase;
 import com.example.gethelpapp.db.model.Specialist;
 import com.example.gethelpapp.db.model.User;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 public class EditHelperActivity extends AppCompatActivity {
 
     TextView nameField,jobField,emailField,phoneField,addressField;
@@ -25,6 +32,9 @@ public class EditHelperActivity extends AppCompatActivity {
     private SpecialistDao specialistDao;
     static int userId;
     static int specialistId;
+    ImageView image;
+    Uri selectedImageUri;
+    Specialist specialist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,18 +47,29 @@ public class EditHelperActivity extends AppCompatActivity {
         }
 
         nameField = (EditText) findViewById(R.id.nameField);
+        jobField = (EditText) findViewById(R.id.jobField);
         emailField = (EditText) findViewById(R.id.emailField);
         addressField = (EditText) findViewById(R.id.addressField);
         phoneField = (EditText) findViewById(R.id.phoneField);
-
+        image = (ImageView) findViewById(R.id.helperImage);
         saveButton = (Button) findViewById(R.id.saveButton);
         specialistDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db").allowMainThreadQueries()
                 .build().getSpecialistDao();
-
+         specialist = specialistDao.getSpecialist(specialistId,userId);
+        selectedImageUri = Uri.parse(specialist.getImage());
+        InputStream inputStream = null;
+        try {
+            inputStream = getContentResolver().openInputStream(selectedImageUri);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+       // image.setImageBitmap(bitmap);
+        //image.setImageDrawable();
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Specialist specialist = specialistDao.getSpecialist(specialistId,userId);
+
                 //    String email = emailField.getText().toString().trim();
                 //   String password = registerPassword.getText().toString().trim();
                 //  String passwordConf = registerConfirmPassword.getText().toString().trim();
@@ -57,9 +78,14 @@ public class EditHelperActivity extends AppCompatActivity {
                 String email = emailField.getText().toString().trim();
                 String address = addressField.getText().toString().trim();
                 String phone = phoneField.getText().toString().trim();
+                String job = jobField.getText().toString().trim();
                 if(name.length()>1) {
 
                     specialist.setName(name);
+                }
+                if(name.length()>1) {
+
+                    specialist.setJob(job);
                 }
                 if(email.length()>1) {
 

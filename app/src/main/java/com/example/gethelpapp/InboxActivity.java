@@ -3,6 +3,7 @@ package com.example.gethelpapp;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -10,12 +11,16 @@ import android.widget.ListView;
 public class InboxActivity extends ListActivity {
     // Temporary
     private String[] helpers = {"Dentist: Alice Miraci\nLast Message: Today at 1:00 PM", "Doctor: Dr Pepper\nLast Message: Yesterday at 2:00 AM"};
-
+    static int userid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inbox);
+        Bundle extras = getIntent().getExtras();
 
+        if (extras != null) {
+            userid = extras.getInt("UserId");
+        }
         // Temporary
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, helpers));
     }
@@ -37,7 +42,9 @@ public class InboxActivity extends ListActivity {
         }
         if(view.getId() == R.id.remindersButton) {
             Intent i = new Intent(this, RemindersActivity.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            i.putExtra("UserId",userid);
+            Log.i("test", String.valueOf(userid));
             startActivity(i);
         }
     }

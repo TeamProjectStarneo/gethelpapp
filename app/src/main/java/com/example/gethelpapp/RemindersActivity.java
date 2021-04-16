@@ -83,6 +83,13 @@ public class RemindersActivity extends AppCompatActivity {
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             i.putExtra("UserId",userid);
             Log.i("test", String.valueOf(userid));
+            int requestCode = 0;
+            startActivityForResult(i,requestCode);
+        }
+        if(view.getId() == R.id.profileButton) {
+            Intent i = new Intent(this, ProfileActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            i.putExtra("UserId",userid);
             startActivity(i);
         }
         if(view.getId() == R.id.menuButton) {
@@ -90,6 +97,16 @@ public class RemindersActivity extends AppCompatActivity {
             Intent i = new Intent(this, MenuActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
+        }
+    }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == RESULT_OK){
+            loadSpecialists();
+        }
+        else{
+            loadSpecialists();
         }
     }
 }

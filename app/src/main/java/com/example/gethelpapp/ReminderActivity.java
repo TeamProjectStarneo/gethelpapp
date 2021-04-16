@@ -18,7 +18,7 @@ public class ReminderActivity extends AppCompatActivity {
         if(v.getId() == R.id.backButton || v.getId() == R.id.remindersButton) {
             finish();
         }
-        if(v.getId() == R.id.appHeader || v.getId() == R.id.menuButton) {
+        if(v.getId() == R.id.menuButton) {
             Intent i = new Intent(this, MenuActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);

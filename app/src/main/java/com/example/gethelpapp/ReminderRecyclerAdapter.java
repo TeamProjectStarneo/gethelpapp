@@ -2,6 +2,8 @@ package com.example.gethelpapp;
 
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,7 +84,7 @@ public class ReminderRecyclerAdapter extends RecyclerView.Adapter<ReminderRecycl
 
             dateLabel1 = itemView.findViewById(R.id.dateLabel1);
             doctorLabel = itemView.findViewById(R.id.doctorLabel);
-            whyLabel1 = itemView.findViewById(R.id.whyLabel1);
+            whyLabel1 = itemView.findViewById(R.id.whyLabel);
             imageView= itemView.findViewById(R.id.imageView);
 
 
@@ -94,12 +96,22 @@ public class ReminderRecyclerAdapter extends RecyclerView.Adapter<ReminderRecycl
             Reminder reminder = reminderList.get(position);
 
             String why = reminder.getWhy();
-            whyLabel1.setText(why);
-
+            Log.i("why",why);
+            if(why.length()>1) {
+               // whyLabel1.setText(why);
+            }
             String name = String.valueOf(reminder.getDoctorName());
-            doctorLabel.setText(name);
+            Log.i("name",name);
+            if(name.length()>1) {
+              //  doctorLabel.setText(name);
+            }
+
             String date = String.valueOf(reminder.getDate());
-            doctorLabel.setText(date);
+            Log.i("Date",date);
+            if(date.length()>1){
+                //dateLabel1.setText(date);
+            }
+
 
 
 

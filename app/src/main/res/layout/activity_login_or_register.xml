@@ -20,33 +20,33 @@
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="320dp"
+        android:layout_height="83dp"
         android:layout_below="@id/appHeader"
-        android:layout_marginTop="150dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="150dp"
         android:layout_marginRight="50dp"
         android:background="@color/grey"
-        android:text="Login"
-        android:textSize="25sp"
         android:drawableRight="@drawable/login_icon"
         android:onClick="changeActivity"
-        />
+        android:text="Login"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/signUpButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="316dp"
+        android:layout_height="83dp"
+
         android:layout_below="@id/loginButton"
-        android:layout_marginTop="150dp"
         android:layout_marginLeft="50dp"
+        android:layout_marginTop="150dp"
         android:layout_marginRight="50dp"
+        android:layout_marginBottom="150dp"
         android:background="@color/grey"
-        android:text="Sign Up"
-        android:textSize="25sp"
         android:drawableRight="@drawable/register_icon"
         android:onClick="changeActivity"
-        />
+        android:text="Sign Up"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/helpButton"

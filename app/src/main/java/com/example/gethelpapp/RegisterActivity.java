@@ -59,5 +59,14 @@ public class RegisterActivity extends AppCompatActivity  {
         });
 
     }
+    public void changeActivity(View view) {
+        if(view.getId() == R.id.backButton) {
+            Intent i = new Intent(this, LoginRegisterActivity.class);
+            finish();
+        }
+
+
+
+    }
 }
 
