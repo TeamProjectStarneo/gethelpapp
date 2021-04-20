@@ -16,7 +16,7 @@ public class HelpActivity extends AppCompatActivity {
 
     public void changeActivity(View v) {
         if(v.getId() == R.id.appHeader) {
-            Intent i = new Intent(this, MenuActivity.class);
+            Intent i = new Intent(this, LoginRegisterActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }

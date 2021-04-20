@@ -84,6 +84,8 @@ public class ReminderRecyclerAdapter extends RecyclerView.Adapter<ReminderRecycl
 
             dateLabel1 = itemView.findViewById(R.id.dateLabel1);
             doctorLabel = itemView.findViewById(R.id.doctorLabel);
+
+
             whyLabel1 = itemView.findViewById(R.id.dateLabel1);
             imageView= itemView.findViewById(R.id.imageView);
 

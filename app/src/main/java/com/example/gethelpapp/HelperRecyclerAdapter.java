@@ -18,6 +18,8 @@ import android.widget.TextView;
 import com.example.gethelpapp.db.model.Specialist;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.text.DateFormat;
@@ -67,7 +69,17 @@ public class HelperRecyclerAdapter extends RecyclerView.Adapter<HelperRecyclerAd
         holder.helperName.setText(name);
 
         //holder.imageView.setImageDrawable();
-       // Picasso.get().load(specialist.getImage()).into(holder.imageView);
+        String path = specialist.getImage();
+        try {
+            File f=new File(path);
+            Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
+
+            holder.imageView.setImageBitmap(b);
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -66,6 +66,9 @@ public class AddReminderActivity extends AppCompatActivity {
 
         List<String> specialists = new ArrayList<>();
         specialists = specialistDao.getSpecialistNames(userId);
+        if(specialists.get(0).isEmpty()){
+            finish();
+        }
         Log.i("SpecialistName",specialists.get(0));
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, specialists);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -129,6 +132,7 @@ public class AddReminderActivity extends AppCompatActivity {
 
                     reminder.setDoctorName(name);
                 }
+
                 if(date.length()>1) {
 
                     reminder.setDate(date);

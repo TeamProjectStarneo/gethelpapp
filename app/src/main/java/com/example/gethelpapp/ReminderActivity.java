@@ -23,6 +23,11 @@ public class ReminderActivity extends AppCompatActivity {
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }
+        if(v.getId() == R.id.appHeader) {
+            Intent i = new Intent(this, MenuActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+        }
         if(v.getId() == R.id.editButton) {
             //Intent i = new Intent(this, EditReminderActivity.class);
            // startActivity(i);

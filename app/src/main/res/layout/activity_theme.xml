@@ -78,12 +78,11 @@
         android:layout_below="@id/darkModeSwitch"
         android:layout_marginTop="10dp"
         android:background="@color/lightGrey"
-        android:text="Default"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        android:switchMinWidth="75dp"
         android:checked="true"
-        />
+        android:switchMinWidth="75dp"
+        android:text="Default"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/backButton"

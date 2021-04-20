@@ -28,6 +28,7 @@ public class InboxActivity extends ListActivity {
     public void changeActivity(View view) {
         if(view.getId() == R.id.profileButton) {
             Intent i = new Intent(this, ProfileActivity.class);
+            i.putExtra("UserId",userid);
             startActivity(i);
         }
         if(view.getId() == R.id.settingsButton) {

@@ -80,7 +80,6 @@ public class RemindersActivity extends AppCompatActivity {
         if(view.getId() == R.id.addButton) {
             Log.i("test","test");
             Intent i = new Intent(this, AddReminderActivity.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             i.putExtra("UserId",userid);
             Log.i("test", String.valueOf(userid));
             int requestCode = 0;
@@ -92,11 +91,20 @@ public class RemindersActivity extends AppCompatActivity {
             i.putExtra("UserId",userid);
             startActivity(i);
         }
+        if(view.getId() == R.id.settingsButton) {
+            Intent i = new Intent(this, SettingsActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(i);
+        }
         if(view.getId() == R.id.menuButton) {
             Log.i("test","test");
             Intent i = new Intent(this, MenuActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
+        }
+        if(view.getId() == R.id.editButton) {
+            //Intent i = new Intent(this, EditReminderActivity.class);
+            // startActivity(i);
         }
     }
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
