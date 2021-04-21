@@ -18,6 +18,9 @@ public class Reminder implements Serializable {
 
 
 
+    private String image;
+
+
     public String date;
     private String time ;
     private String where;
@@ -33,6 +36,13 @@ public class Reminder implements Serializable {
         this.why = why;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
     public int getReminderId() {
         return reminderId;
     }

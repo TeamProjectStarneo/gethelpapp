@@ -67,6 +67,7 @@ public class HelperActivity extends AppCompatActivity {
         phoneLabel.setText(phone);
         jobLabel.setText(job);
         String image = specialist.getImage();
+        Log.i("This is path to Images",image);
         loadImageFromStorage(image);
 
     }

@@ -4,18 +4,20 @@ package com.example.gethelpapp.db.model;
 import android.net.Uri;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
-@Entity
+@Entity(tableName = "Specialist")
 public class Specialist implements Serializable {
 
 
     @PrimaryKey(autoGenerate = true)
     @NonNull
     private int specialistId;
+    @ColumnInfo(name = "name")
     private String name;
 
     public int getUserId() {
@@ -24,6 +26,7 @@ public class Specialist implements Serializable {
 
 
 
+    @ColumnInfo(name = "image")
     private String image;
     private int userId;
     private String phone;

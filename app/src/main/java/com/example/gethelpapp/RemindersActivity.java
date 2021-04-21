@@ -53,9 +53,9 @@ public class RemindersActivity extends AppCompatActivity {
             public void onLongClickListener(Reminder reminder) {
                 Intent intent = new Intent(RemindersActivity.this, ReminderActivity.class);
                 loadSpecialists();
-                int specialistId = reminder.getReminderId();
+                int reminderId = reminder.getReminderId();
                 int userId = reminder.getUserId();
-                intent.putExtra("SpecialistId",specialistId);
+                intent.putExtra("ReminderId",reminderId);
                 intent.putExtra("UserId",userId);
                 startActivity(intent);
 

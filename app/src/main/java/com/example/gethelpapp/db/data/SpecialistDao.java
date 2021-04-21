@@ -2,6 +2,7 @@ package com.example.gethelpapp.db.data;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
+import androidx.room.Ignore;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
@@ -19,7 +20,9 @@ public interface SpecialistDao {
 
     @Query("Select name FROM Specialist where userId =:userId ")
     public List<String> getSpecialistNames(int userId);
+    @Query("Select * FROM Specialist where name =:name and userId = :userId")
 
+    public List<Specialist> getImagesFromName(String name,int userId);
     @Query("Select * FROM Specialist where userId= :UserId")
     public List<Specialist> getSpecialists(int UserId);
     @Insert

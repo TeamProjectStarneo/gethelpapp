@@ -45,6 +45,7 @@ public class AddReminderActivity extends AppCompatActivity {
     private ReminderDao reminderDao;
     private SpecialistDao specialistDao;
     static int userId;
+    String image;
     Inflater inflater;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,8 @@ public class AddReminderActivity extends AppCompatActivity {
         }
         Log.i("test", String.valueOf(userId));
         helpSpinner = findViewById(R.id.helperSpinner);
+
+
         timePicker = findViewById(R.id.timePicker);
         datePicker = findViewById(R.id.datePicker);
         addButton = findViewById(R.id.saveButton);
@@ -66,9 +69,12 @@ public class AddReminderActivity extends AppCompatActivity {
 
         List<String> specialists = new ArrayList<>();
         specialists = specialistDao.getSpecialistNames(userId);
+
+
         if(specialists.get(0).isEmpty()){
             finish();
         }
+
         Log.i("SpecialistName",specialists.get(0));
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, specialists);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -85,6 +91,7 @@ public class AddReminderActivity extends AppCompatActivity {
                 Log.v("item", (String) parent.getItemAtPosition(position));
 
                 name = (String) parent.getItemAtPosition(position);
+
             }
 
             @Override
@@ -113,7 +120,7 @@ public class AddReminderActivity extends AppCompatActivity {
 
                 int hour = timePicker.getHour();
                 int minute = timePicker.getMinute();
-                Reminder reminder = new Reminder(userId, name, date, time, where, why);
+
                 if (hour == 0) {
                     hour += 12;
                     format = "AM";
@@ -125,9 +132,17 @@ public class AddReminderActivity extends AppCompatActivity {
                 } else {
                     format = "AM";
                 }
+                List<Specialist> specialistsImage = new ArrayList<>();
+                specialistsImage = specialistDao.getImagesFromName(name,userId);
+                Specialist specialist = specialistsImage.get(0);
+
+                String images = specialist.getImage();
+                Log.i("String",images);
                 time = hour +":" + minute+ " " + format;
+                Log.d("time", time);
                 why = whyLabel.getText().toString().trim();
                 where = whereLabel.getText().toString().trim();
+                Reminder reminder = new Reminder(userId, name, date, time, where, why);
                 if(name.length()>1) {
 
                     reminder.setDoctorName(name);
@@ -148,6 +163,10 @@ public class AddReminderActivity extends AppCompatActivity {
                 if(where.length()>1) {
 
                     reminder.setWhere(where);
+                }
+                if(images.length()>1) {
+
+                    reminder.setImage(images);
                 }
                 reminderDao.insert(reminder);
                 setResult(RESULT_OK);

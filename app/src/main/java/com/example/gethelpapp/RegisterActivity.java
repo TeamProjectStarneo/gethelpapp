@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,7 +45,6 @@ public class RegisterActivity extends AppCompatActivity  {
                 String email = emailField.getText().toString().trim();
                 String password = registerPassword.getText().toString().trim();
                 String passwordConf = registerConfirmPassword.getText().toString().trim();
-
                 if (password.equals(passwordConf)) {
                     User user = new User(name, password, email);
                     userDao.insert(user);
@@ -58,6 +58,10 @@ public class RegisterActivity extends AppCompatActivity  {
             }
         });
 
+    }
+    public String getURLForResource (int resourceId) {
+        //use BuildConfig.APPLICATION_ID instead of R.class.getPackage().getName() if both are not same
+        return Uri.parse("android.resource://"+R.class.getPackage().getName()+"/" +resourceId).toString();
     }
     public void changeActivity(View view) {
         if(view.getId() == R.id.backButton) {

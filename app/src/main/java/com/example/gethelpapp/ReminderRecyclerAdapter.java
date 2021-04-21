@@ -3,6 +3,8 @@ package com.example.gethelpapp;
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,9 @@ import android.widget.TextView;
 import com.example.gethelpapp.db.model.Reminder;
 import com.example.gethelpapp.db.model.Specialist;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -34,7 +39,7 @@ public class ReminderRecyclerAdapter extends RecyclerView.Adapter<ReminderRecycl
 
     private Context context;
     private List<Reminder> reminderList;
-
+    Reminder reminder;
     static ActionCallback mActionCallbacks;
 
     ReminderRecyclerAdapter(Context context, List<Reminder> reminderList) {
@@ -52,7 +57,41 @@ public class ReminderRecyclerAdapter extends RecyclerView.Adapter<ReminderRecycl
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
+        reminder = reminderList.get(position);
+        String why = String.valueOf(reminder.getWhy());
+        Log.i("why",why);
+        if(why.length()>1) {
+            holder.whyLabel1.setText(why);
+        }
+        String name = String.valueOf(reminder.getDoctorName());
+        Log.i("name",name);
+        if(name.length()>1) {
+            holder.doctorLabel.setText(name);
+        }
+
+        String date = String.valueOf(reminder.getDate());
+        Log.i("Date",date);
+        if(date.length()>1){
+            holder.dateLabel1.setText(date);
+        }
+        reminder = reminderList.get(position);
         holder.bindData(position);
+        String image = String.valueOf(reminder.getImage());
+        Log.i("name",image);
+        if(image.length()>1) {
+            String path = reminder.getImage();
+            try {
+                File f=new File(path);
+                Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
+
+                holder.imageView.setImageBitmap(b);
+            }
+            catch (FileNotFoundException e)
+            {
+                e.printStackTrace();
+            }
+        }
+
     }
 
     @Override
@@ -95,24 +134,8 @@ public class ReminderRecyclerAdapter extends RecyclerView.Adapter<ReminderRecycl
         //binding data to the textviews
         void bindData(int position) {
 
-            Reminder reminder = reminderList.get(position);
 
-            String why = String.valueOf(reminder.getWhy());
-            Log.i("why",why);
-            if(why.length()>1) {
-                whyLabel1.setText(why);
-            }
-            String name = String.valueOf(reminder.getDoctorName());
-            Log.i("name",name);
-            if(name.length()>1) {
-               doctorLabel.setText(name);
-            }
 
-            String date = String.valueOf(reminder.getDate());
-            Log.i("Date",date);
-            if(date.length()>1){
-                //dateLabel1.setText(date);
-            }
 
 
 
