@@ -77,17 +77,19 @@ public class InboxActivity extends AppCompatActivity {
     public void changeActivity(View view) {
         if(view.getId() == R.id.profileButton) {
             Intent i = new Intent(this, ProfileActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             i.putExtra("UserId",userid);
             startActivity(i);
         }
         if(view.getId() == R.id.settingsButton) {
             Intent i = new Intent(this, SettingsActivity.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(i);
         }
         if(view.getId() == R.id.menuButton || view.getId() == R.id.appHeader) {
             Intent i = new Intent(this, MenuActivity.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(i);
         }
         if(view.getId() == R.id.remindersButton) {

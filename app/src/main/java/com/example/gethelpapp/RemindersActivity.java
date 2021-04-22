@@ -75,18 +75,19 @@ public class RemindersActivity extends AppCompatActivity {
         if(view.getId() == R.id.messageButton) {
             Intent i = new Intent(this, InboxActivity.class);
             i.putExtra("UserId",userid);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(i);
         }
         if(view.getId() == R.id.appHeader) {
             Intent i = new Intent(this, MenuActivity.class);
             i.putExtra("userId",userid);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(i);
         }
         if(view.getId() == R.id.addButton) {
             Log.i("test","test");
             Intent i = new Intent(this, AddReminderActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             i.putExtra("UserId",userid);
             Log.i("test", String.valueOf(userid));
             int requestCode = 0;
@@ -106,7 +107,7 @@ public class RemindersActivity extends AppCompatActivity {
         if(view.getId() == R.id.menuButton || view.getId() == R.id.appHeader) {
             Intent i = new Intent(this, MenuActivity.class);
             i.putExtra("userId",userid);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(i);
         }
         if(view.getId() == R.id.editButton) {

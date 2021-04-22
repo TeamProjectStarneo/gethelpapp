@@ -20,10 +20,7 @@ public class HelpActivity extends AppCompatActivity {
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }
-        if(v.getId() == R.id.emailSJOGButton) {
-            Intent i = new Intent(this, EmailSJOGActivity.class);
-            startActivity(i);
-        }
+
         if(v.getId() == R.id.backButton) {
             finish();
         }

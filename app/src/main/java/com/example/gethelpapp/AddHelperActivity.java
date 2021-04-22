@@ -66,7 +66,7 @@ public class AddHelperActivity extends AppCompatActivity {
         jobField = (EditText) findViewById(R.id.jobField1);
         addressField = (EditText) findViewById(R.id.addressField1);
         phoneField = (EditText) findViewById(R.id.phoneField1);
-
+        imagepath = "@drawable/placeholder_helper";
         saveButton = (Button) findViewById(R.id.addButton1);
 
         specialistDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db").allowMainThreadQueries().build().getSpecialistDao();
@@ -97,7 +97,7 @@ public class AddHelperActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //String userName = editTextUsername.getText().toString().trim();
-                // String uri = "@drawable/placeholder_helper";
+               // String uri = "@drawable/placeholder_helper";
 
                 String email = emailField.getText().toString().trim();
                 String name = nameField.getText().toString().trim();
@@ -105,6 +105,7 @@ public class AddHelperActivity extends AppCompatActivity {
                 String address = addressField.getText().toString().trim();
                 String job = jobField.getText().toString().trim();
                 String image = imagepath.toString();
+
 
                 Specialist specialist = new Specialist(userId, image, name, phone, email, address, job);
 
