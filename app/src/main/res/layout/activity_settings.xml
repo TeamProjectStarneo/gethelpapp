@@ -3,102 +3,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_below="@id/settingsHeader"
     android:background="@color/white"
     tools:context=".SettingsActivity">
 
     <LinearLayout
         android:id="@+id/settingsHeader"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="top">
 
         <Button
             android:id="@+id/profileButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Profile"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
-            android:drawableTop="@drawable/placeholder_profile_icon"
             android:layout_weight="0.25"
-            />
+            android:background="@color/grey"
+            android:drawableTop="@drawable/placeholder_profile_icon"
+            android:onClick="changeActivity"
+            android:text="Profile"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/getHelpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Get Help"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
-            android:drawableTop="@drawable/app_icon_small"
             android:layout_weight="0.5"
-            />
+            android:background="@color/grey"
+            android:drawableTop="@drawable/app_icon_small"
+            android:onClick="changeActivity"
+            android:text="Get Help"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/settingsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Settings"
-            android:textSize="25sp"
-            android:drawableTop="@drawable/settings_icon"
             android:layout_weight="0.25"
-            />
+            android:background="@color/grey"
+            android:drawableTop="@drawable/settings_icon"
+            android:text="Settings"
+            android:textSize="25sp" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/notificationsButton"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_below="@id/settingsHeader"
-        android:layout_marginTop="10dp"
-        android:background="@color/lightGrey"
-        android:text="Notifications"
-        android:textSize="25sp"
-        android:drawableLeft="@drawable/notification_icon"
-        android:onClick="changeActivity"
-        />
-
-    <Button
-        android:id="@+id/accessibilityButton"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_below="@id/notificationsButton"
-        android:layout_marginTop="10dp"
-        android:background="@color/lightGrey"
-        android:text="Accessibility"
-        android:textSize="25sp"
-        android:drawableLeft="@drawable/accessibility_icon"
-        android:onClick="changeActivity"
-        />
-
-    <Button
-        android:id="@+id/soundButton"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_below="@id/accessibilityButton"
-        android:layout_marginTop="10dp"
-        android:background="@color/lightGrey"
-        android:text="Sound"
-        android:textSize="25sp"
-        android:drawableLeft="@drawable/sound_icon"
-        android:onClick="changeActivity"
-        />
 
     <Button
         android:id="@+id/themeButton"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_below="@id/soundButton"
+        android:layout_below="@id/settingsHeader"
         android:layout_marginTop="10dp"
         android:background="@color/lightGrey"
-        android:text="Theme"
-        android:textSize="25sp"
         android:drawableLeft="@drawable/theme_icon"
         android:onClick="changeActivity"
-        />
+        android:text="Theme"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/helpButton"
@@ -107,54 +65,50 @@
         android:layout_below="@id/themeButton"
         android:layout_marginTop="10dp"
         android:background="@color/lightGrey"
-        android:text="Help"
-        android:textSize="25sp"
         android:drawableLeft="@drawable/help_icon"
         android:onClick="changeActivity"
-        />
+        android:text="Help"
+        android:textSize="25sp" />
 
     <LinearLayout
         android:id="@+id/settingsFooter"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
 
         <Button
             android:id="@+id/messageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Inbox"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
-            android:drawableTop="@drawable/message_icon"
             android:layout_weight="0.3"
-            />
+            android:background="@color/grey"
+            android:drawableTop="@drawable/message_icon"
+            android:onClick="changeActivity"
+            android:text="Inbox"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/menuButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="0.3"
             android:background="@color/grey"
             android:clickable="false"
-            android:text="Menu"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
             android:drawableTop="@drawable/menu_icon"
-            android:layout_weight="0.3"
-            />
+            android:onClick="changeActivity"
+            android:text="Menu"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/remindersButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Reminders"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
-            android:drawableTop="@drawable/reminder_icon"
             android:layout_weight="0.3"
-            />
+            android:background="@color/grey"
+            android:drawableTop="@drawable/reminder_icon"
+            android:onClick="changeActivity"
+            android:text="Reminders"
+            android:textSize="25sp" />
     </LinearLayout>
 
 </RelativeLayout>

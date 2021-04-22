@@ -60,26 +60,17 @@
             android:drawableTop="@drawable/upload_icon"
             />
 
-        <Button
-            android:id="@+id/micButton"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/round_button"
-            android:drawableTop="@drawable/mic_icon"
-            />
-
         <EditText
-            android:id="@+id/searchField"
+            android:id="@+id/MessageField"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_below="@id/menuHeader"
             android:layout_weight="0.9"
             android:background="@color/lightGrey"
-            android:textSize="25sp"
-            />
+            android:textSize="25sp" />
 
         <Button
-            android:id="@+id/searchButton"
+            android:id="@+id/sendButton"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:drawableRight="@drawable/send_icon"
@@ -88,5 +79,12 @@
             android:textSize="25sp"
             />
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/message_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/messageFooter"
+        android:layout_below="@id/messageHeader" />
 
 </RelativeLayout>

@@ -24,18 +24,7 @@ public class SettingsActivity extends AppCompatActivity {
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }
-        if(v.getId() == R.id.notificationsButton) {
-            Intent i = new Intent(this, NotificationsActivity.class);
-            startActivity(i);
-        }
-        if(v.getId() == R.id.accessibilityButton) {
-            Intent i = new Intent(this, AccessibilityActivity.class);
-            startActivity(i);
-        }
-        if(v.getId() == R.id.soundButton) {
-            Intent i = new Intent(this, SoundActivity.class);
-            startActivity(i);
-        }
+
         if(v.getId() == R.id.themeButton) {
             Intent i = new Intent(this, ThemeActivity.class);
             startActivity(i);

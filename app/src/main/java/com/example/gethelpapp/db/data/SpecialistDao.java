@@ -17,7 +17,8 @@ import java.util.List;
 public interface SpecialistDao {
     @Query("SELECT * FROM Specialist where specialistId= :specialistId and userId= :userId")
     Specialist getSpecialist(int specialistId,int userId);
-
+    @Query("Select specialistId FROM Specialist where phone like :phone")
+    public int getSpecialistIdFromPhone(String phone);
     @Query("Select name FROM Specialist where userId =:userId ")
     public List<String> getSpecialistNames(int userId);
     @Query("Select * FROM Specialist where name =:name and userId = :userId")

@@ -28,6 +28,7 @@ public class HelperActivity extends AppCompatActivity {
     static int specialistId;
     TextView nameLabel,emailLabel,addressLabel,phoneLabel,jobLabel;
     ImageView helperImage;
+    static String phonenumber;
     private SpecialistDao specialistDao;
     static String name;
     @Override
@@ -61,6 +62,7 @@ public class HelperActivity extends AppCompatActivity {
         String address = specialist.getAddress();
         String phone = specialist.getPhone();
         String job = specialist.getJob();
+        phonenumber = specialist.getPhone();
         nameLabel.setText(name);
         emailLabel.setText(email);
         addressLabel.setText(address);
@@ -92,6 +94,9 @@ public class HelperActivity extends AppCompatActivity {
         if(v.getId() == R.id.messageButton) {
             Intent i = new Intent(this, MessageActivity.class);
             i.putExtra("Name",name);
+            i.putExtra("Phone",phonenumber);
+            i.putExtra("UserId",userId);
+            i.putExtra("SpecialistId",specialistId);
             startActivity(i);
         }
         if(v.getId() == R.id.editButton) {

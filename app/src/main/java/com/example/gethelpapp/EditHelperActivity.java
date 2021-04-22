@@ -117,7 +117,10 @@ public class EditHelperActivity extends AppCompatActivity {
                 String address = addressField.getText().toString().trim();
                 String phone = phoneField.getText().toString().trim();
                 String job = jobField.getText().toString().trim();
-                String image = imagepath.toString();
+                String image = null;
+                if(imagepath!=null) {
+                    image = imagepath;
+                }
                 if(name.length()>1) {
 
                     specialist.setName(name);
@@ -138,7 +141,7 @@ public class EditHelperActivity extends AppCompatActivity {
 
                     specialist.setPhone(phone);
                 }
-                if(image.length()>1){
+                if(image!=null){
                     specialist.setImage(image);
                 }
 

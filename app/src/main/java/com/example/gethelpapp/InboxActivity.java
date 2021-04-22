@@ -8,10 +8,17 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class InboxActivity extends ListActivity {
-    // Temporary
-    private String[] helpers = {"Dentist: Alice Miraci\nLast Message: Today at 1:00 PM", "Doctor: Dr Pepper\nLast Message: Yesterday at 2:00 AM"};
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.gethelpapp.db.model.Specialist;
+
+import java.util.List;
+
+public class InboxActivity extends AppCompatActivity {
+
     static int userid;
+    static int specialistId;
+    List<Specialist> specialists;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,9 +27,8 @@ public class InboxActivity extends ListActivity {
 
         if (extras != null) {
             userid = extras.getInt("UserId");
+            specialistId = extras.getInt("specialistId");
         }
-        // Temporary
-        setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, helpers));
     }
 
     public void changeActivity(View view) {
@@ -50,9 +56,5 @@ public class InboxActivity extends ListActivity {
         }
     }
 
-    // Temporary
-    protected void onListItemClick(ListView lv, View v, int pos, long id) {
-        Intent i = new Intent(this, MessageActivity.class);
-        startActivity(i);
-    }
+
 }

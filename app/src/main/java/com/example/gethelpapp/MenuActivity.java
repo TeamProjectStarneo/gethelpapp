@@ -1,5 +1,6 @@
 package com.example.gethelpapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,9 +8,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.provider.Telephony;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -28,21 +34,27 @@ public class MenuActivity extends AppCompatActivity {
     private RecyclerView helperRecyclerView;
     private HelperRecyclerAdapter helperRecyclerAdapter;
     private SpecialistDao specialistDao;
+    List<Specialist> specialists;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         Bundle extras = getIntent().getExtras();
 
+        if(Build.VERSION.SDK_INT >=Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.RECEIVE_SMS)!= PackageManager.PERMISSION_GRANTED)
+        {
+            requestPermissions(new String[]{Manifest.permission.RECEIVE_SMS}, 1000);
+        }
         if (extras != null) {
             userid = extras.getInt("userId");
         }
+        Global.userid = userid;
         specialistDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db")
                 .fallbackToDestructiveMigration()
                 .allowMainThreadQueries()   //Allows room to do operation on main thread
                 .build()
                 .getSpecialistDao();
-        List<Specialist> specialists = new ArrayList<>();
+        specialists = new ArrayList<>();
         specialists = specialistDao.getSpecialists(userid);
 
         helperRecyclerView = findViewById(R.id.helperRecyclerView);
@@ -83,6 +95,14 @@ public class MenuActivity extends AppCompatActivity {
             Log.i("test", String.valueOf(userid));
             startActivity(i);
         }
+        if(view.getId() == R.id.messageButton) {
+            Intent i = new Intent(this, InboxActivity.class);
+            i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.putExtra("UserId",userid);
+            Log.i("test", String.valueOf(userid));
+            startActivity(i);
+        }
         if(view.getId() == R.id.remindersButton) {
             Intent i = new Intent(this, RemindersActivity.class);
             i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -110,6 +130,16 @@ public class MenuActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults){
+            if(requestCode==1000){
+                if(grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                    Toast.makeText(this,"permission granted",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(this,"permission not granted",Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
     public void showEmergency(View v) {
         AlertDialog.Builder emergencyAlert = new AlertDialog.Builder(MenuActivity.this);
         emergencyAlert.setTitle("Emergency");

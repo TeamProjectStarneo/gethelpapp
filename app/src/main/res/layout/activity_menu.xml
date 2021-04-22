@@ -16,13 +16,12 @@
             android:id="@+id/profileButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Profile"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
-            android:drawableTop="@drawable/placeholder_profile_icon"
             android:layout_weight="0.25"
-            />
+            android:background="@color/grey"
+            android:drawableTop="@drawable/placeholder_profile_icon"
+            android:onClick="changeActivity"
+            android:text="Profile"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/appHeader"

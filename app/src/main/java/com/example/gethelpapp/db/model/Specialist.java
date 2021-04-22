@@ -34,6 +34,9 @@ public class Specialist implements Serializable {
     private String address;
     private String job;
 
+
+
+    private String lastMessage;
     public Specialist(int userId,String image,String name,String phone,String email,String address,String job) {
         this.userId = userId;
         this.image = image;
@@ -108,6 +111,13 @@ public class Specialist implements Serializable {
 
     public void setImage(String image) {
         this.image = image;
+    }
+    public String getLastMessage() {
+        return lastMessage;
+    }
+
+    public void setLastMessage(String lastMessage) {
+        this.lastMessage = lastMessage;
     }
     @Override
     public String toString() {

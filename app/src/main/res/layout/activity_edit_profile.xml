@@ -55,7 +55,7 @@
         android:layout_below="@id/profileHeader"
         android:layout_marginTop="20dp"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/placeholder_profile" />
+        app:srcCompat="@drawable/placeholder_profile_icon" />
 
     <Button
         android:id="@+id/changeProfileImage"

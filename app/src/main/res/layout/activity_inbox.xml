@@ -79,28 +79,6 @@
             />
     </LinearLayout>
 
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/searchBar"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="175dp"
-        android:divider="@color/black"
-        android:dividerHeight="1dp" />
-
-    <Button
-        android:id="@+id/editButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/messageFooter"
-        android:background="@color/lightGrey"
-        android:text="Edit"
-        android:textSize="25sp"
-        android:drawableTop="@drawable/edit_icon"
-        android:layout_weight="1"
-        />
-
     <LinearLayout
         android:id="@+id/messageFooter"
         android:layout_height="wrap_content"
@@ -144,5 +122,12 @@
             android:onClick="changeActivity"
             />
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/inbox_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/messageFooter"
+        android:layout_below="@id/messageHeader" />
 
 </RelativeLayout>
