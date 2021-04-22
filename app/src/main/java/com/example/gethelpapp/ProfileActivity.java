@@ -41,6 +41,7 @@ public class ProfileActivity extends AppCompatActivity {
         if (extras != null) {
             userid = extras.getInt("UserId");
         }
+        userid = Global.userid;
         userDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db").allowMainThreadQueries()
                 .build().getUserDao();
         image = (ImageView) findViewById(R.id.profileImage);

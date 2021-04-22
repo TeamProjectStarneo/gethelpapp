@@ -169,7 +169,7 @@ public class EditHelperActivity extends AppCompatActivity {
         fos.write(bytes);
         fos.close();
         imagepath = getFilesDir() +"/"+name;
-        Toast.makeText(getApplicationContext(),"File saved in :"+ getFilesDir() + "/"+name,Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(),"File saved in :"+ getFilesDir() + "/"+name,Toast.LENGTH_SHORT).show();
 
     }
     private byte[] getBytesFromFile(File file) throws IOException
@@ -207,6 +207,7 @@ public class EditHelperActivity extends AppCompatActivity {
                         insertIntPrivateStorage(name,path);
 
                     }catch(Exception exception){
+                        Log.i("test","Exception");
                         Toast.makeText(this,exception.getMessage(),Toast.LENGTH_SHORT).show();
                     }
                 }
