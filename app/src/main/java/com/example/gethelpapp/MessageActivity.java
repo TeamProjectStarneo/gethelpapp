@@ -77,6 +77,7 @@ public class MessageActivity extends AppCompatActivity {
     String phonefrom;
     Inbox inbox;
     String msgbody;
+    String phonenumber;
     private String ipath;
     MessageDao messageDao;
     SpecialistDao specialistDao;
@@ -87,7 +88,8 @@ public class MessageActivity extends AppCompatActivity {
         public void onReceive(Context context,Intent intent){
             super.onReceive(context,intent);
             Log.i("THIS IS A RECIEVER MESSAGE",msgBody);
-            phonefrom = msg_from;
+            Log.i("THIS IS A RECIEVER MESSAGE",msg_from);
+            phonenumber = msg_from;
             msgbody = msgBody;
             receieveMessage();
 
@@ -228,9 +230,11 @@ public class MessageActivity extends AppCompatActivity {
         SpecialistDao specialistDao;
         specialistDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db").allowMainThreadQueries()
                 .build().getSpecialistDao();
-        int specialistId = specialistDao.getSpecialistIdFromPhone(phonefrom);
+        Log.i("Phone number",phonenumber);
+        int specialistId = specialistDao.getSpecialistIdFromPhone(phonenumber);
+        Log.i("Specialistid from phone", String.valueOf(specialistId));
         String Message = messageView.getText().toString().trim();
-        Messages message1 = new Messages(Global.userid,false,msgbody,specialistId);
+        Messages message1 = new Messages(Global.userid,false,msgbody,specialistid);
         messageDao.insert(message1);
         Log.i("receivemessage sepcialistid", String.valueOf(specialistId));
         Log.i("receivemessage sepcialistid", String.valueOf(specialistid));
@@ -343,7 +347,7 @@ public class MessageActivity extends AppCompatActivity {
         return bmp;
     }
     private void MyMessage() {
-        String phonenumber = "0879712652";
+
 
 
 
@@ -359,13 +363,13 @@ public class MessageActivity extends AppCompatActivity {
         messageRecyclerView.setAdapter(messageRecyclerAdapter);
         SmsManager smsManager = SmsManager.getDefault();
 
-        smsManager.sendTextMessage(phonenumber,null,Message,null,null);
+        smsManager.sendTextMessage(phone,null,Message,null,null);
         Toast.makeText(this,Message,Toast.LENGTH_SHORT).show();
         if(imageUri !=null) {
             Intent smsIntent = new Intent(Intent.ACTION_SEND);
             smsIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
             smsIntent.setType("image/*");
-            smsIntent.putExtra("address", phonenumber);
+            smsIntent.putExtra("address", phone);
             startActivity(smsIntent);
         }
         Specialist specialist;

@@ -50,9 +50,10 @@ public class SmsReceiver extends BroadcastReceiver {
             //callback.doStuff(msgBody);
             Intent intent1 = new Intent("com.example.gethelpapp",null);
             intent.putExtra("msgbody",msgBody);
+            intent.putExtra("msg_from",msg_from);
             context.sendBroadcast(intent1);
 
-            msg_from="0879712652";
+            //msg_from="0879712652";
         }
     }
 
