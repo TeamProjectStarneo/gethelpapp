@@ -80,7 +80,7 @@ public class Reminder implements Serializable {
     }
 
     public void setTime(String time) {
-        time = time;
+        this.time = time;
     }
 
     public String getWhere() {

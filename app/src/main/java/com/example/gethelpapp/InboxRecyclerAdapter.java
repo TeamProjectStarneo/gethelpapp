@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.example.gethelpapp.db.model.Inbox;
 import com.example.gethelpapp.db.model.Messages;
 import com.example.gethelpapp.db.model.Specialist;
 import com.squareup.picasso.Picasso;
@@ -34,53 +35,70 @@ public class InboxRecyclerAdapter extends RecyclerView.Adapter<InboxRecyclerAdap
 
     //Interface for callbacks
     static interface ActionCallback {
-        void onLongClickListener(Messages messages  );
+        void onLongClickListener(Inbox Inbox );
 
 
     }
     Uri selectedImageUri;
     private Context context;
-    private List<Messages> messageList;
-    Messages messages;
+    private List<Inbox> inboxList;
+    Inbox Inbox;
     static ActionCallback mActionCallbacks;
 
-    InboxRecyclerAdapter(Context context, List<Messages> messageList) {
+    InboxRecyclerAdapter(Context context, List<Inbox> inboxList) {
         this.context = context;
-        this.messageList = messageList;
+        this.inboxList = inboxList;
 
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context)
-                .inflate(R.layout.item_recycler_messages, parent, false);
+                .inflate(R.layout.item_recycler_inbox, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        messages = messageList.get(position);
+        Inbox = inboxList.get(position);
 
         holder.bindData(position);
+        TextView senderView;
+        TextView receiverView;
+
+        String job = Inbox.getSpecialistJob();
+        String name = Inbox.getSpecialistName();
+        String date = Inbox.getLastmessage();
+
+        if(Inbox.getLastmessage()==null){
+            holder.lastMessage.setText("No messages");
+        }else{
+            holder.lastMessage.setText(date);
+        }
+
+        holder.specialistJob.setText(job);
+        holder.specialistName.setText(name);
+
 
     }
 
     @Override
     //getting amount of rows in assignmentlist
     public int getItemCount() {
-        return messageList.size();
+        return inboxList.size();
     }
 
-    void updateData(List<Messages> messages) {
-        this.messageList = messageList;
+    void updateData(List<Inbox> inbox) {
+        this.inboxList = inboxList;
         notifyDataSetChanged();
     }
 
     //View Holder
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView helperName;
-        public TextView helperJob;
+        public TextView specialistName;
+        public TextView specialistJob;
+        public TextView lastMessage;
         public ImageView imageView;
 
 
@@ -92,29 +110,17 @@ public class InboxRecyclerAdapter extends RecyclerView.Adapter<InboxRecyclerAdap
             itemView.setOnClickListener(this);
 
 
-            helperName = itemView.findViewById(R.id.helperName);
-            helperJob = itemView.findViewById(R.id.helperJob);
-            imageView= itemView.findViewById(R.id.imageView);
+            specialistName = itemView.findViewById(R.id.doctorName);
+            specialistJob = itemView.findViewById(R.id.doctorJob);
+            lastMessage = itemView.findViewById(R.id.sentMessage);
+            //imageView= itemView.findViewById(R.id.imageView);
 
 
 
         }
         //binding data to the textviews
         void bindData( int position) {
-            TextView senderView;
-            TextView receiverView;
-            messages = messageList.get(position);
 
-            String job = messages.getMessage();
-
-            if(messages.getSender()==true){
-                senderView = itemView.findViewById(R.id.sentMessage);
-                senderView.setText(job);
-            }
-            else{
-                receiverView = itemView.findViewById(R.id.recieveMsg);
-                receiverView.setText(job);
-            }
 
             //String name = String.valueOf(specialist.getName());
             // helperName.setText(name);
@@ -129,13 +135,13 @@ public class InboxRecyclerAdapter extends RecyclerView.Adapter<InboxRecyclerAdap
         @Override
         public void onClick(View view) {
             if (mActionCallbacks != null) {
-
+                mActionCallbacks.onLongClickListener(inboxList.get(getAdapterPosition()));
             }
 
         }
     }
 
-    static void addActionCallback(ActionCallback actionCallbacks) {
+    static void addActionCallback(InboxRecyclerAdapter.ActionCallback actionCallbacks) {
         mActionCallbacks = actionCallbacks;
     }
 }

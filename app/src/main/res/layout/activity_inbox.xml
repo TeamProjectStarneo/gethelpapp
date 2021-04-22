@@ -16,67 +16,34 @@
             android:id="@+id/profileButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Profile"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
-            android:drawableTop="@drawable/placeholder_profile_icon"
             android:layout_weight="0.25"
-            />
+            android:background="@color/colorPrimary"
+            android:drawableTop="@drawable/placeholder_profile_icon"
+            android:onClick="changeActivity"
+            android:text="Profile"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/appHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Get Help"
-            android:textSize="25sp"
-            android:drawableTop="@drawable/app_icon_small"
             android:layout_weight="0.5"
+            android:background="@color/colorPrimary"
+            android:drawableTop="@drawable/app_icon_small"
             android:onClick="changeActivity"
-            />
+            android:text="Get Help"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/settingsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Settings"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
-            android:drawableTop="@drawable/settings_icon"
             android:layout_weight="0.25"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/searchBar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_below="@id/messageHeader"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/searchField"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_below="@id/menuHeader"
-            android:layout_weight="0.9"
-            android:background="@color/lightGrey"
-            android:textSize="25sp"
-            android:singleLine="true"
-            android:hint="Search..."
-            />
-
-        <Button
-            android:id="@+id/searchButton"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:drawableRight="@drawable/search_icon"
-            android:background="@color/lightGrey"
-            android:text=""
-            android:textSize="25sp"
-            />
+            android:background="@color/colorPrimary"
+            android:drawableTop="@drawable/settings_icon"
+            android:onClick="changeActivity"
+            android:text="Settings"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -89,38 +56,35 @@
             android:id="@+id/messageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Inbox"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
-            android:drawableTop="@drawable/message_icon"
             android:layout_weight="0.3"
+            android:background="@color/colorPrimary"
             android:clickable="false"
-            />
+            android:drawableTop="@drawable/message_icon"
+            android:onClick="changeActivity"
+            android:text="Inbox"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/menuButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Menu"
-            android:textSize="25sp"
-            android:drawableTop="@drawable/menu_icon"
             android:layout_weight="0.3"
+            android:background="@color/colorPrimary"
+            android:drawableTop="@drawable/menu_icon"
             android:onClick="changeActivity"
-            />
+            android:text="Menu"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/remindersButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Reminders"
-            android:textSize="25sp"
-            android:drawableTop="@drawable/reminder_icon"
             android:layout_weight="0.3"
+            android:background="@color/colorPrimary"
+            android:drawableTop="@drawable/reminder_icon"
             android:onClick="changeActivity"
-            />
+            android:text="Reminders"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -128,6 +92,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/messageFooter"
-        android:layout_below="@id/messageHeader" />
+        android:layout_below="@id/messageHeader"
+        android:layout_marginTop="5dp" />
 
 </RelativeLayout>

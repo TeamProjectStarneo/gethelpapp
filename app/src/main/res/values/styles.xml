@@ -2,14 +2,39 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/grey</item>
         <item name="android:windowAnimationStyle">@null</item>
     </style>
 
     <style name="PickerStyle">
         <item name="android:textSize">25sp</item>
     </style>
-
+    <!--Add your custom theme here -->
+    <style name="BlueTheme" parent="Base.AppTheme.BlueTheme"/>
+    <style name="Base.AppTheme.BlueTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/grey</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+    <style name="GreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/Green</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/grey</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+    <style name="YellowTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/grey</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+    <style name="RedTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/red</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/grey</item>
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
 </resources>

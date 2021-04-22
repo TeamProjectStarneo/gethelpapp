@@ -109,6 +109,7 @@ public class AddHelperActivity extends AppCompatActivity {
                 Specialist specialist = new Specialist(userId, image, name, phone, email, address, job);
 
                 specialistDao.insert(specialist);
+
                 Intent moveToMenu = new Intent(AddHelperActivity.this, MenuActivity.class);
                 startActivity(moveToMenu);
 

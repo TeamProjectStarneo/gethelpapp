@@ -16,33 +16,30 @@
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Back"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
+            android:background="@color/colorPrimary"
             android:drawableTop="@drawable/back_icon"
-            />
+            android:onClick="changeActivity"
+            android:text="Back"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/appHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GET HELP"
-            android:textSize="25sp"
-            android:textColor="@color/black"
-            android:textAlignment="center"
-            android:drawableTop="@drawable/app_icon_small"
-            android:background="@color/grey"
             android:layout_weight="1"
-            />
+            android:background="@color/colorPrimary"
+            android:drawableTop="@drawable/app_icon_small"
+            android:text="GET HELP"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/blank"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@color/grey"
             android:layout_weight="1"
-            />
+            android:background="@color/colorPrimary" />
     </LinearLayout>
 
     <LinearLayout

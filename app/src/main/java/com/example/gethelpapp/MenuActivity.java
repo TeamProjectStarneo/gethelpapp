@@ -100,6 +100,7 @@ public class MenuActivity extends AppCompatActivity {
             i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             i.putExtra("UserId",userid);
+            //i.putExtra("SpecialistId",specialistId);
             Log.i("test", String.valueOf(userid));
             startActivity(i);
         }

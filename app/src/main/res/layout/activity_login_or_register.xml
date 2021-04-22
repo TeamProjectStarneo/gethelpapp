@@ -10,7 +10,7 @@
         android:id="@+id/appHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/grey"
+        android:background="@color/colorPrimary"
         android:drawableTop="@drawable/app_icon_small"
         android:text="GET HELP APP"
         android:textAlignment="center"
@@ -26,7 +26,7 @@
         android:layout_marginTop="150dp"
         android:layout_marginRight="50dp"
 
-        android:background="@drawable/buttonshape"
+        android:background="@color/colorPrimary"
         android:drawableRight="@drawable/login_icon"
         android:drawableTint="@color/white"
         android:onClick="changeActivity"
@@ -43,7 +43,7 @@
         android:layout_marginTop="107dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="150dp"
-        android:background="@drawable/buttonshape"
+        android:background="@color/colorPrimary"
         android:drawableRight="@drawable/register_icon"
         android:drawableTint="@color/white"
         android:onClick="changeActivity"
@@ -56,10 +56,11 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/grey"
+        android:background="@color/colorPrimary"
         android:onClick="changeActivity"
         android:text="Help"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="25sp" />
 
 </RelativeLayout>

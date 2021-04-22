@@ -37,14 +37,17 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.gethelpapp.db.data.InboxDao;
 import com.example.gethelpapp.db.data.MessageDao;
 import com.example.gethelpapp.db.data.SpecialistDao;
 import com.example.gethelpapp.db.data.UserDataBase;
+import com.example.gethelpapp.db.model.Inbox;
 import com.example.gethelpapp.db.model.Messages;
 import com.example.gethelpapp.db.model.Specialist;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -57,13 +60,13 @@ public class MessageActivity extends AppCompatActivity {
     private static final String SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED";
     static String name;
 
-
+    InboxDao inboxDao;
     static int specialistid;
     static int userid;
     private RecyclerView messageRecyclerView;
     private MessageRecyclerAdapter messageRecyclerAdapter;
     String phone;
-
+    List<Messages> messages = new ArrayList<>();
     Button uploadButton;
     public static final int TAKE_PHOTO = 1;
     private static final int CAMERA_REQUEST = 1888;
@@ -72,6 +75,7 @@ public class MessageActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_SELECT_IMAGE = 4;
     private Uri imageUri;
     String phonefrom;
+    Inbox inbox;
     String msgbody;
     private String ipath;
     MessageDao messageDao;
@@ -121,7 +125,19 @@ public class MessageActivity extends AppCompatActivity {
                 .build().getMessageDao();
         specialistDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db").allowMainThreadQueries()
                 .build().getSpecialistDao();
-        List<Messages> messages = new ArrayList<>();
+        inboxDao =Room.databaseBuilder(this, UserDataBase.class, "atabase.db").allowMainThreadQueries()
+                .build().getInboxDao();
+        try {
+            inbox = inboxDao.getInbox(specialistid, userid);
+            if(inbox==null){
+                Specialist specialist = specialistDao.getSpecialist(specialistid,userid);
+
+                inbox = new Inbox(userid,specialist.getJob(),specialist.getName(),specialistid);
+                inboxDao.insert(inbox);
+            }
+        }catch(Exception e){
+
+        }
         messages = messageDao.getMessages(specialistid, userid);
         messageRecyclerView = findViewById(R.id.message_recycler);
         messageRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -218,6 +234,21 @@ public class MessageActivity extends AppCompatActivity {
         messageDao.insert(message1);
         Log.i("receivemessage sepcialistid", String.valueOf(specialistId));
         Log.i("receivemessage sepcialistid", String.valueOf(specialistid));
+        messages = messageDao.getMessages(specialistid, userid);
+        messageRecyclerAdapter.updateData(messages);
+        messages.clear();
+        messages.addAll(messageDao.getMessages(specialistid,userid));
+        messageRecyclerAdapter = new MessageRecyclerAdapter(this,messages);
+        messageRecyclerView.setAdapter(messageRecyclerAdapter);
+        SmsManager smsManager = SmsManager.getDefault();
+        Date todaysdate = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String date = format.format(todaysdate);
+        Log.i("Date",date);
+        inbox.setLastmessage("Last Message Receieved: "+date);
+        inboxDao.update(inbox);
+        //messageRecyclerView.setAdapter(messageRecyclerAdapter);
+
     }
 
     public void sendMessage(){
@@ -226,6 +257,8 @@ public class MessageActivity extends AppCompatActivity {
         if(permissionCheck== PackageManager.PERMISSION_GRANTED){
 
             MyMessage();
+
+
         }
         else{
             ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS},0);
@@ -312,12 +345,18 @@ public class MessageActivity extends AppCompatActivity {
     private void MyMessage() {
         String phonenumber = "0879712652";
 
+
+
+
         messageDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db").allowMainThreadQueries()
                 .build().getMessageDao();
         String Message = messageView.getText().toString().trim();
         Messages message = new Messages(userid,true,Message,specialistid);
         messageDao.insert(message);
-
+        messages.clear();
+        messages.addAll(messageDao.getMessages(specialistid,userid));
+        messageRecyclerAdapter = new MessageRecyclerAdapter(this,messages);
+        messageRecyclerView.setAdapter(messageRecyclerAdapter);
         SmsManager smsManager = SmsManager.getDefault();
 
         smsManager.sendTextMessage(phonenumber,null,Message,null,null);
@@ -333,9 +372,13 @@ public class MessageActivity extends AppCompatActivity {
 
         specialist = specialistDao.getSpecialist(specialistid,userid);
         Toast.makeText(this,specialist.getName(),Toast.LENGTH_SHORT).show();
-
-        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-        specialist.setLastMessage(currentDate);
+        Date todaysdate = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String date = format.format(todaysdate);
+        Log.i("Date",date);
+        inbox.setLastmessage("Last Message Receieved: "+date);
+        inboxDao.update(inbox);
+        //pecialist.setLastMessage(currentDate);
     }
 
     @Override

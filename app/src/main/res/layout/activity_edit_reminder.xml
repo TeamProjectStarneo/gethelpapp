@@ -1,114 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".EditReminderActivity">
-
-    <LinearLayout
-        android:id="@+id/editReminderHeader"
-        android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:gravity="top">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".EditReminderActivity">
 
-        <Button
-            android:id="@+id/backButton"
-            android:layout_width="0px"
+        <LinearLayout
+            android:id="@+id/editReminderHeader"
             android:layout_height="wrap_content"
-            android:background="@color/grey"
-            android:text="Back"
-            android:textSize="25sp"
-            android:drawableTop="@drawable/back_icon"
-            android:onClick="changeActivity"
-            android:layout_weight="1"
-            />
+            android:layout_width="match_parent"
+            android:gravity="top">
 
-        <Button
-            android:id="@+id/appHeader"
-            android:layout_width="0px"
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:drawableTop="@drawable/back_icon"
+                android:onClick="changeActivity"
+                android:text="Back"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/appHeader"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:drawableTop="@drawable/app_icon_small"
+                android:onClick="changeActivity"
+                android:text="GET HELP"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/blank"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/helperLabel"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="GET HELP"
+            android:layout_below="@id/editReminderHeader"
+            android:layout_marginTop="100dp"
+            android:text="With who:"
             android:textSize="25sp"
             android:textColor="@color/black"
             android:textAlignment="center"
-            android:drawableTop="@drawable/app_icon_small"
-            android:background="@color/grey"
-            android:layout_weight="1"
-            android:onClick="changeActivity"
+            />
+
+        <LinearLayout
+            android:id="@+id/helperMenu"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_below="@id/helperLabel"
+            android:background="@color/lightGrey"
+            >
+            <Spinner
+                android:id="@+id/helperSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:spinnerMode="dropdown"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/datePickerLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/helperMenu"
+            android:layout_marginTop="75dp"
+            android:text="Date:"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            />
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/datePickerLabel"
+            android:layout_centerHorizontal="true"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:scrollbarThumbHorizontal="@drawable/up_icon"
+            android:scrollbarThumbVertical="@drawable/down_icon"
+            android:theme="@style/PickerStyle" />
+
+        <TextView
+            android:id="@+id/timePickerLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/datePicker"
+            android:layout_marginTop="25dp"
+            android:text="Time:"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timePickerLabel"
+            android:layout_marginTop="28dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="25dp"
+            android:theme="@style/PickerStyle"
+            android:timePickerMode="spinner" />
+
+        <TextView
+            android:id="@+id/whereLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timePicker"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:text="Where:"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            />
+
+        <EditText
+            android:id="@+id/whereField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/whereLabel"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@color/lightGrey"
+            android:textSize="25sp"
+            android:singleLine="true"
+            android:hint="The Clinic"
             />
 
         <TextView
-            android:id="@+id/blank"
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:background="@color/grey"
-            android:layout_weight="1"
-            />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/helperLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editReminderHeader"
-        android:layout_marginTop="100dp"
-        android:text="With who:"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        />
-
-    <LinearLayout
-        android:id="@+id/helperMenu"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_below="@id/helperLabel"
-        android:background="@color/lightGrey"
-        >
-        <Spinner
-            android:id="@+id/helperSpinner"
+            android:id="@+id/whyLabel"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:spinnerMode="dropdown"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/whereField"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:text="Why:"
+            android:textSize="25sp"
+            android:textColor="@color/black"
             />
-    </LinearLayout>
 
-    <TextView
-        android:id="@+id/datePickerLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/helperMenu"
-        android:layout_marginTop="75dp"
-        android:text="Date:"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        />
+        <EditText
+            android:id="@+id/whyField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/whyLabel"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@color/lightGrey"
+            android:textSize="25sp"
+            android:singleLine="true"
+            android:hint="Stomach surgery"
+            />
 
-    <DatePicker
-        android:id="@+id/datePicker"
-        android:theme="@style/PickerStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/datePickerLabel"
-        android:layout_centerHorizontal="true"
-        android:datePickerMode="spinner"
-        android:calendarViewShown="false"
-        />
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/whyField"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="50dp"
+            android:background="@color/colorPrimary"
+            android:drawableBottom="@drawable/add_icon"
+            android:onClick="changeActivity"
+            android:text="Save"
+            android:textAlignment="center"
+            android:textSize="25sp" />
 
-    <Button
-        android:id="@+id/downButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:drawableBottom="@drawable/down_icon"
-        android:background="@color/lightGrey"
-        android:onClick="changeActivity"
-        />
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

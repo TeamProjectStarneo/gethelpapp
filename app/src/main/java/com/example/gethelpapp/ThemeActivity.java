@@ -15,7 +15,7 @@ public class ThemeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theme);
-
+        setTheme(R.style.GreenTheme);
         switchTheme = (Switch) findViewById(R.id.darkModeSwitch);
         final Boolean switchstate =switchTheme.isChecked();
 
@@ -26,11 +26,14 @@ public class ThemeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(switchTheme.isChecked()){
                     switchTheme.setChecked(true);
+                    setTheme(R.style.GreenTheme);
+
                 }
-                if(!switchTheme.isChecked()){
+                else if(!switchTheme.isChecked()){
                     switchTheme.setChecked(false);
 
                 }
+                finish();
             }
 
 

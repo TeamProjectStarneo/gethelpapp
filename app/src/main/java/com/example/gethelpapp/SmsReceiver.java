@@ -47,7 +47,6 @@ public class SmsReceiver extends BroadcastReceiver {
                     e.printStackTrace();
                 }
             }
-            msgBody="test";
             //callback.doStuff(msgBody);
             Intent intent1 = new Intent("com.example.gethelpapp",null);
             intent.putExtra("msgbody",msgBody);

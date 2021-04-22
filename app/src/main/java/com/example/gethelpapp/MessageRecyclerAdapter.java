@@ -62,6 +62,20 @@ public class MessageRecyclerAdapter extends RecyclerView.Adapter<MessageRecycler
 
         messages = messageList.get(position);
 
+
+
+        String job = messages.getMessage();
+
+        if(messages.getSender()==true){
+
+            holder.receiverView.setText(job);
+            holder.senderView.setText("Sent");
+        }
+        else{
+            holder.receiverView.setText(job);
+            holder.senderView.setText("Received");
+        }
+
         holder.bindData(position);
 
     }
@@ -79,8 +93,8 @@ public class MessageRecyclerAdapter extends RecyclerView.Adapter<MessageRecycler
 
     //View Holder
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView helperName;
-        public TextView helperJob;
+        public TextView receiverView;
+        public TextView senderView;
         public ImageView imageView;
 
 
@@ -92,31 +106,15 @@ public class MessageRecyclerAdapter extends RecyclerView.Adapter<MessageRecycler
             itemView.setOnClickListener(this);
 
 
-            helperName = itemView.findViewById(R.id.helperName);
-            helperJob = itemView.findViewById(R.id.helperJob);
-            imageView= itemView.findViewById(R.id.imageView);
+            receiverView = itemView.findViewById(R.id.recieveMsg);
+            senderView = itemView.findViewById(R.id.sentMessage);
 
 
 
         }
         //binding data to the textviews
         void bindData( int position) {
-            TextView senderView;
-            TextView receiverView;
-            messages = messageList.get(position);
 
-            String job = messages.getMessage();
-            receiverView = itemView.findViewById(R.id.recieveMsg);
-            senderView = itemView.findViewById(R.id.sentMessage);
-            if(messages.getSender()==true){
-
-                receiverView.setText(job);
-                senderView.setText("Sent");
-            }
-            else{
-                receiverView.setText(job);
-                senderView.setText("Received");
-            }
 
             //String name = String.valueOf(specialist.getName());
             // helperName.setText(name);

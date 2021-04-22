@@ -17,33 +17,31 @@
             android:id="@+id/backButton"
             android:layout_width="0px"
             android:layout_height="match_parent"
-            android:background="@color/grey"
-            android:text="Back"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
-            android:drawableTop="@drawable/back_icon"
             android:layout_weight="1"
-            />
+            android:background="@color/colorPrimary"
+            android:drawableTop="@drawable/back_icon"
+            android:onClick="changeActivity"
+            android:text="Back"
+            android:textSize="25sp" />
 
         <ImageView
             android:id="@+id/helperImage"
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
-            android:background="@color/grey"
             android:layout_weight="1"
+            android:background="@color/colorPrimary"
             app:srcCompat="@drawable/placeholder_helper" />
 
         <TextView
             android:id="@+id/helperNameView"
             android:layout_width="0px"
             android:layout_height="match_parent"
-            android:background="@color/grey"
-            android:text="Doctor:\nDr Pepper"
-            android:textSize="25sp"
-            android:textColor="@color/black"
             android:layout_weight="1"
-            />
+            android:background="@color/colorPrimary"
+            android:text="Doctor:\nDr Pepper"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <LinearLayout

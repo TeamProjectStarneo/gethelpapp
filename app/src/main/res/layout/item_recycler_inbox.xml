@@ -21,8 +21,22 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/doctorName"
+                android:layout_width="139dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="176dp"
+                android:layout_marginTop="12dp"
+                android:text="Receiver"
+                android:textColor="@color/black"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="Deprecated" />
+
+            <TextView
                 android:id="@+id/sentMessage"
-                android:layout_width="113dp"
+                android:layout_width="wrap_content"
                 android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="64dp"
@@ -37,8 +51,8 @@
 
             <TextView
                 android:id="@+id/doctorJob"
-                android:layout_width="399dp"
-                android:layout_height="52dp"
+                android:layout_width="139dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
                 android:text="Receiver"
