@@ -129,7 +129,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
                     user.setPhone(phone);
                 }
-                if(image.length()>1){
+                if(image!=null){
                     user.setImage(image);
                 }
 
