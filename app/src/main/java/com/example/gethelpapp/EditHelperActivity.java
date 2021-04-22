@@ -25,9 +25,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.gethelpapp.db.data.ReminderDao;
 import com.example.gethelpapp.db.data.SpecialistDao;
 import com.example.gethelpapp.db.data.UserDao;
 import com.example.gethelpapp.db.data.UserDataBase;
+import com.example.gethelpapp.db.model.Reminder;
 import com.example.gethelpapp.db.model.Specialist;
 import com.example.gethelpapp.db.model.User;
 
@@ -39,6 +41,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 public class EditHelperActivity extends AppCompatActivity {
 
@@ -53,6 +56,7 @@ public class EditHelperActivity extends AppCompatActivity {
     Uri selectedImageUri;
     String imagepath;
     Specialist specialist;
+    ReminderDao reminderDao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +68,8 @@ public class EditHelperActivity extends AppCompatActivity {
             specialistId = extras.getInt("SpecialistId");
         }
 
+        reminderDao = Room.databaseBuilder(this, UserDataBase.class, "atabase.db").allowMainThreadQueries()
+                .build().getReminderDao();
         nameField = (EditText) findViewById(R.id.nameField);
         jobField = (EditText) findViewById(R.id.jobField);
         emailField = (EditText) findViewById(R.id.emailField);
@@ -112,6 +118,13 @@ public class EditHelperActivity extends AppCompatActivity {
                 //   String password = registerPassword.getText().toString().trim();
                 //  String passwordConf = registerConfirmPassword.getText().toString().trim();
 
+                String doctorName = specialist.getName();
+                List<Reminder> reminder = reminderDao.getRemindersbySpecialist(doctorName);
+
+
+                Reminder reminder1 = reminder.get(0);
+
+
                 String name = nameField.getText().toString();
                 String email = emailField.getText().toString().trim();
                 String address = addressField.getText().toString().trim();
@@ -124,6 +137,7 @@ public class EditHelperActivity extends AppCompatActivity {
                 if(name.length()>1) {
 
                     specialist.setName(name);
+                    reminder1.setDoctorName(name);
                 }
                 if(job.length()>1) {
 
@@ -149,6 +163,7 @@ public class EditHelperActivity extends AppCompatActivity {
                 Log.d("test","test");
 
                 //Log.d("test",user.getEmail());
+                reminderDao.update(reminder1);
                 specialistDao.update(specialist);
                 //userDao.insert(user);
                 setResult(RESULT_OK);
@@ -199,6 +214,7 @@ public class EditHelperActivity extends AppCompatActivity {
                 selectedImageUri = data.getData();
                 if(selectedImageUri !=null) {
                     try{
+
                         InputStream inputStream = getContentResolver().openInputStream(selectedImageUri);
                         Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                         image.setImageBitmap(bitmap);
