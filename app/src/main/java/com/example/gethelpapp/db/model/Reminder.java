@@ -14,7 +14,7 @@ public class Reminder implements Serializable {
     @NonNull
     private int reminderId;
     private int userId;
-    private String doctorName;
+    private int specialistId;
 
 
 
@@ -26,10 +26,10 @@ public class Reminder implements Serializable {
     private String where;
     private String why;
 
-    public Reminder( int userId, String doctorName, String date, String time, String where, String why) {
+    public Reminder( int userId, int specialistId, String date, String time, String where, String why) {
 
         this.userId = userId;
-        this.doctorName = doctorName;
+        this.specialistId = specialistId;
         this.date = date;
         this.time = time;
         this.where = where;
@@ -59,12 +59,12 @@ public class Reminder implements Serializable {
         this.userId = userId;
     }
 
-    public String getDoctorName() {
-        return doctorName;
+    public int getSpecialistId() {
+        return specialistId;
     }
 
-    public void setDoctorName(String doctorName) {
-        this.doctorName = doctorName;
+    public void setSpecialistId(int specialistId) {
+        this.specialistId = specialistId;
     }
 
     public String getDate() {
@@ -106,7 +106,7 @@ public class Reminder implements Serializable {
     public String toString() {
         return "Reminder{" +
                 "userId=" + userId +
-                ", doctorName=" + doctorName +
+                ", doctorName=" + specialistId +
                 ", date=" + date +
                 ", Time='" + time + '\'' +
                 ", where='" + where + '\'' +

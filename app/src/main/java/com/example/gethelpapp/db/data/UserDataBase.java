@@ -12,7 +12,7 @@ import com.example.gethelpapp.db.model.User;
 import com.example.gethelpapp.db.typeconverters.DateTypeConverter;
 
 
-@Database(entities = {User.class, Specialist.class, Reminder.class, Messages.class, Inbox.class}, version = 9, exportSchema = false)
+@Database(entities = {User.class, Specialist.class, Reminder.class, Messages.class, Inbox.class}, version = 10, exportSchema = false)
 @TypeConverters({DateTypeConverter.class})
 public abstract class UserDataBase extends RoomDatabase {
 

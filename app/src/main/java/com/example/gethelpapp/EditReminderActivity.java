@@ -80,6 +80,7 @@ public class EditReminderActivity extends AppCompatActivity {
         }
 
         Log.i("SpecialistName",specialists.get(0));
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, specialists);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         helpSpinner.setAdapter(adapter);
@@ -135,7 +136,8 @@ public class EditReminderActivity extends AppCompatActivity {
                     format = "AM";
                 }
                 List<Specialist> specialistsImage = new ArrayList<>();
-                specialistsImage = specialistDao.getImagesFromName(name,userId);
+                Reminder reminder1 = reminderDao.getReminder(reminderId,userId);
+                specialistsImage = specialistDao.getImagesFromNames(name,userId);
                 Specialist specialist = specialistsImage.get(0);
 
                 String images = specialist.getImage();
@@ -150,13 +152,13 @@ public class EditReminderActivity extends AppCompatActivity {
                 //og.i("Reminder doctor",reminder.getDoctorName());
                 String time1 = reminder.getTime();
                 String date1 = reminder.getDate();
-                String name1 = reminder.getDoctorName();
+                int name1 = reminder.getSpecialistId();
                 Log.i("Time",time);
                 Log.i("Time",time1);
 
-                if(name!=name1) {
+                if(specialist.getSpecialistId()!=reminder.getSpecialistId()) {
 
-                    reminder.setDoctorName(name);
+                    reminder.setSpecialistId(specialist.getSpecialistId());
                 }
 
                 if(date!=date1) {

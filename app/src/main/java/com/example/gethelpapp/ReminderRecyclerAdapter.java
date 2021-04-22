@@ -2,6 +2,7 @@ package com.example.gethelpapp;
 
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.example.gethelpapp.db.data.SpecialistDao;
+import com.example.gethelpapp.db.data.UserDataBase;
 import com.example.gethelpapp.db.model.Reminder;
 import com.example.gethelpapp.db.model.Specialist;
 
@@ -41,11 +44,12 @@ public class ReminderRecyclerAdapter extends RecyclerView.Adapter<ReminderRecycl
     private List<Reminder> reminderList;
     Reminder reminder;
     static ActionCallback mActionCallbacks;
-
+    SpecialistDao specialistDao;
     ReminderRecyclerAdapter(Context context, List<Reminder> reminderList) {
         this.context = context;
         this.reminderList = reminderList;
-
+        specialistDao = Room.databaseBuilder(context, UserDataBase.class, "atabase.db")
+                .allowMainThreadQueries().build().getSpecialistDao();
     }
 
     @Override
@@ -63,10 +67,13 @@ public class ReminderRecyclerAdapter extends RecyclerView.Adapter<ReminderRecycl
         if(why.length()>1) {
             holder.whyLabel1.setText(why);
         }
-        String name = String.valueOf(reminder.getDoctorName());
+
+        String name = String.valueOf(reminder.getSpecialistId());
+        Specialist specialist = specialistDao.getSpecialist(reminder.getSpecialistId(),reminder.getUserId());
+
         Log.i("name",name);
         if(name.length()>1) {
-            holder.doctorLabel.setText(name);
+            holder.doctorLabel.setText(specialist.getName());
         }
 
         String date = String.valueOf(reminder.getDate());

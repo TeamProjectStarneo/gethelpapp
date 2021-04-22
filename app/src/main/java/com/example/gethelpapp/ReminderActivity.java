@@ -73,10 +73,11 @@ public class ReminderActivity extends AppCompatActivity {
         String time = reminder.getTime();
         String why = reminder.getWhy();
         String where = reminder.getWhere();
-        String doctorName = reminder.getDoctorName();
-        specialistsImage = specialistDao.getImagesFromName(doctorName,userId);
+
+        specialistsImage = specialistDao.getImagesFromName(reminder.getSpecialistId(),userId);
         Specialist specialist = specialistsImage.get(0);
 
+        String doctorName = specialist.getName();
         String images = specialist.getImage();
         Log.d("This is path to real image",images);
         datelabel.setText("Date: " + date);

@@ -118,11 +118,12 @@ public class EditHelperActivity extends AppCompatActivity {
                 //   String password = registerPassword.getText().toString().trim();
                 //  String passwordConf = registerConfirmPassword.getText().toString().trim();
 
-                String doctorName = specialist.getName();
+                int doctorName = specialist.getSpecialistId();
                 List<Reminder> reminder = reminderDao.getRemindersbySpecialist(doctorName);
 
 
-                Reminder reminder1 = reminder.get(0);
+
+
 
 
                 String name = nameField.getText().toString();
@@ -137,7 +138,8 @@ public class EditHelperActivity extends AppCompatActivity {
                 if(name.length()>1) {
 
                     specialist.setName(name);
-                    reminder1.setDoctorName(name);
+
+
                 }
                 if(job.length()>1) {
 
@@ -163,7 +165,6 @@ public class EditHelperActivity extends AppCompatActivity {
                 Log.d("test","test");
 
                 //Log.d("test",user.getEmail());
-                reminderDao.update(reminder1);
                 specialistDao.update(specialist);
                 //userDao.insert(user);
                 setResult(RESULT_OK);

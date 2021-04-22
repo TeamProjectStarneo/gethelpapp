@@ -21,8 +21,8 @@ public interface ReminderDao {
     @Query("Select * FROM Reminder where userId= :UserId")
     public List<Reminder> getReminders(int UserId);
 
-    @Query("Select * FROM Reminder where doctorName= :doctorName")
-    public List<Reminder> getRemindersbySpecialist(String doctorName);
+    @Query("Select * FROM Reminder where specialistId= :specialistId")
+    public List<Reminder> getRemindersbySpecialist(int specialistId);
     @Insert
     void insert(Reminder reminder);
 

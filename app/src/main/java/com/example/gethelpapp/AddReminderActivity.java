@@ -134,8 +134,14 @@ public class AddReminderActivity extends AppCompatActivity {
                     format = "AM";
                 }
                 List<Specialist> specialistsImage = new ArrayList<>();
-                specialistsImage = specialistDao.getImagesFromName(name,userId);
-                Specialist specialist = specialistsImage.get(0);
+                List<Specialist> specialistsid = new ArrayList();
+                specialistsid = specialistDao.getImagesFromNames(name,userId);
+                Specialist specialist = specialistsid.get(0);
+
+
+
+
+
 
                 String images = specialist.getImage();
                 Log.i("String",images);
@@ -143,10 +149,10 @@ public class AddReminderActivity extends AppCompatActivity {
                 Log.d("time", time);
                 why = whyLabel.getText().toString().trim();
                 where = whereLabel.getText().toString().trim();
-                Reminder reminder = new Reminder(userId, name, date, time, where, why);
+                Reminder reminder = new Reminder(userId, specialist.getSpecialistId(), date, time, where, why);
                 if(name.length()>1) {
 
-                    reminder.setDoctorName(name);
+                    reminder.setSpecialistId(specialist.getSpecialistId());
                 }
 
                 if(date.length()>1) {

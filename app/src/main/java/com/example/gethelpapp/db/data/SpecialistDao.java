@@ -21,9 +21,12 @@ public interface SpecialistDao {
     public int getSpecialistIdFromPhone(String phone);
     @Query("Select name FROM Specialist where userId =:userId ")
     public List<String> getSpecialistNames(int userId);
-    @Query("Select * FROM Specialist where name =:name and userId = :userId")
+    @Query("Select * FROM Specialist where specialistid =:specialistid and userId = :userId")
+    public List<Specialist> getImagesFromName(int specialistid,int userId);
 
-    public List<Specialist> getImagesFromName(String name,int userId);
+    @Query("Select * FROM Specialist where name =:name and userId = :userId")
+    public List<Specialist> getImagesFromNames(String name,int userId);
+
     @Query("Select * FROM Specialist where userId= :UserId")
     public List<Specialist> getSpecialists(int UserId);
     @Insert
