@@ -78,7 +78,7 @@ public class RemindersActivity extends AppCompatActivity {
             i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(i);
         }
-        if(view.getId() == R.id.appHeader) {
+        if(view.getId() == R.id.getHelpButton) {
             Intent i = new Intent(this, MenuActivity.class);
             i.putExtra("userId",userid);
             i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
@@ -104,7 +104,7 @@ public class RemindersActivity extends AppCompatActivity {
             i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
             startActivity(i);
         }
-        if(view.getId() == R.id.menuButton || view.getId() == R.id.appHeader) {
+        if(view.getId() == R.id.menuButton ) {
             Intent i = new Intent(this, MenuActivity.class);
             i.putExtra("userId",userid);
             i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);

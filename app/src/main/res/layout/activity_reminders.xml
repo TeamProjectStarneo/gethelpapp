@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:id="@+id/menuHeader"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="top">
 
         <Button
@@ -24,12 +24,13 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/appHeader"
+            android:id="@+id/getHelpButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:background="@color/colorPrimary"
             android:drawableTop="@drawable/app_icon_small"
+            android:onClick="changeActivity"
             android:text="Get Help"
             android:textSize="25sp" />
 
@@ -37,13 +38,11 @@
             android:id="@+id/settingsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:text="Settings"
-            android:textSize="25sp"
-            android:onClick="changeActivity"
-            android:drawableTop="@drawable/settings_icon"
             android:layout_weight="0.25"
-            />
+            android:background="@color/colorPrimary"
+            android:drawableTop="@drawable/settings_icon"
+            android:text="Settings"
+            android:textSize="25sp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
