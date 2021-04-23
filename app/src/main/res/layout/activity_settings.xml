@@ -16,7 +16,7 @@
         <Button
             android:id="@+id/profileButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:background="@color/colorPrimary"
             android:drawableTop="@drawable/placeholder_profile_icon"
@@ -49,23 +49,22 @@
     <Button
         android:id="@+id/themeButton"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_below="@id/settingsHeader"
-        android:layout_marginTop="10dp"
+        android:layout_height="86dp"
+        android:layout_above="@id/settingsFooter"
+        android:layout_marginTop="14dp"
         android:background="@color/lightGrey"
-        android:drawableLeft="@drawable/theme_icon"
+        android:drawableBottom="@drawable/logout_icon"
         android:onClick="changeActivity"
-        android:text="Theme"
         android:textSize="25sp" />
 
     <Button
         android:id="@+id/helpButton"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_below="@id/themeButton"
+        android:layout_below="@id/settingsHeader"
         android:layout_marginTop="10dp"
         android:background="@color/lightGrey"
-        android:drawableLeft="@drawable/help_icon"
+        android:drawableBottom="@drawable/help_icon"
         android:onClick="changeActivity"
         android:text="Help"
         android:textSize="25sp" />

@@ -72,6 +72,17 @@ public class EditProfileActivity extends AppCompatActivity {
 
         user = userDao.retrieveUserDetails(userid);
 
+        String path = user.getImage();
+        if(path!=null) {
+            File f = new File(path);
+            Bitmap b = null;
+            try {
+                b = BitmapFactory.decodeStream(new FileInputStream(f));
+                image.setImageBitmap(b);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
 
 
         findViewById(R.id.changeProfileImage).setOnClickListener(new View.OnClickListener() {

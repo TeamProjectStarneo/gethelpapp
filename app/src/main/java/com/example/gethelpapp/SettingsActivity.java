@@ -21,12 +21,11 @@ public class SettingsActivity extends AppCompatActivity {
         }
         if(v.getId() == R.id.getHelpButton || v.getId() == R.id.menuButton) {
             Intent i = new Intent(this, MenuActivity.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }
 
         if(v.getId() == R.id.themeButton) {
-            Intent i = new Intent(this, ThemeActivity.class);
+            Intent i = new Intent(this, LoginRegisterActivity.class);
             startActivity(i);
         }
         if(v.getId() == R.id.helpButton) {
@@ -40,7 +39,6 @@ public class SettingsActivity extends AppCompatActivity {
         }
         if(v.getId() == R.id.remindersButton) {
             Intent i = new Intent(this, RemindersActivity.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
         }
     }
