@@ -3,18 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".LoginRegisterActivity">
+    android:theme="@style/BlueTheme"
 
     <TextView
         android:id="@+id/appHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/orange"
         android:drawableTop="@drawable/app_icon_small"
         android:text="GET HELP APP"
         android:textAlignment="center"
-        android:textColor="@color/white"
         android:textSize="25sp" />
 
     <Button
@@ -24,14 +23,13 @@
         android:layout_below="@id/appHeader"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="150dp"
-        android:layout_marginRight="50dp"
 
-        android:background="@color/colorPrimary"
+        android:layout_marginRight="50dp"
+        android:background="@color/orange"
         android:drawableRight="@drawable/login_icon"
         android:drawableTint="@color/white"
         android:onClick="changeActivity"
         android:text="Login"
-        android:textColor="@color/white"
         android:textSize="25sp" />
 
     <Button
@@ -43,24 +41,23 @@
         android:layout_marginTop="107dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="150dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/orange"
         android:drawableRight="@drawable/register_icon"
         android:drawableTint="@color/white"
         android:onClick="changeActivity"
+
         android:text="Sign Up"
-        android:textColor="@color/white"
         android:textSize="25sp" />
 
     <Button
         android:id="@+id/helpButton"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="81dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
+        android:background="@color/orange"
         android:onClick="changeActivity"
         android:text="Help"
         android:textAlignment="center"
-        android:textColor="@color/white"
         android:textSize="25sp" />
 
 </RelativeLayout>

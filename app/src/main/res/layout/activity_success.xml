@@ -10,13 +10,12 @@
         android:id="@+id/appHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GET HELP APP"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        android:textAlignment="center"
+        android:background="@color/orange"
         android:drawableTop="@drawable/app_icon_small"
-        android:background="@color/grey"
-        />
+        android:text="GET HELP APP"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/successMessage"
@@ -36,12 +35,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Continue"
-        android:textSize="25sp"
-        android:textAlignment="center"
-        android:background="@color/grey"
-        android:onClick="changeActivity"
+        android:background="@color/orange"
         android:drawableRight="@drawable/send_icon"
-        />
+        android:onClick="changeActivity"
+        android:text="Continue"
+        android:textAlignment="center"
+        android:textSize="25sp" />
 
 </RelativeLayout>

@@ -3,6 +3,7 @@ package com.example.gethelpapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
@@ -37,7 +38,11 @@ public class MenuActivity extends AppCompatActivity {
     List<Specialist> specialists;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+        //int theme = getThemeFromPreferences(); // R.style.AppTheme_RED
+
+
         setContentView(R.layout.activity_menu);
         Bundle extras = getIntent().getExtras();
 

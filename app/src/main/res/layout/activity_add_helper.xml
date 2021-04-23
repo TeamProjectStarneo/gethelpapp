@@ -48,11 +48,11 @@
         android:id="@+id/helperImage"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/helperHeader"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/placeholder_helper" />
+        app:srcCompat="@drawable/placeholder_profile_icon" />
 
     <Button
         android:id="@+id/changeProfileImage"
